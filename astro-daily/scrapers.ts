@@ -528,6 +528,20 @@ export async function scrapeSkywatcher(): Promise<ScrapResult> {
   }
 }
 
+const MONTH_MAP: Record<string, string> = {
+  'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April',
+  'May': 'May', 'Jun': 'June', 'Jul': 'July', 'Aug': 'August',
+  'Sep': 'September', 'Oct': 'October', 'Nov': 'November', 'Dec': 'December',
+};
+
+function formatEclipseTitle(title: string): string {
+  const match = title.match(/^(.+?)\s+(\d{4})\s+(\w{3})\s+(\d{1,2})$/);
+  if (!match) return title;
+  const [, type, year, monthAbbr, day] = match;
+  const month = MONTH_MAP[monthAbbr] || monthAbbr;
+  return `${type} of ${month} ${parseInt(day)}, ${year}`;
+}
+
 export async function scrapeEclipsewise(): Promise<ScrapResult> {
   try {
     // EclipseWise 是一个日食/月食参考网站，没有新闻频道
@@ -560,12 +574,14 @@ export async function scrapeEclipsewise(): Promise<ScrapResult> {
         link = link.startsWith('/') ? `https://www.eclipsewise.com${link}` : `https://www.eclipsewise.com/${link}`;
       }
 
+      const cleanTitle = formatEclipseTitle(title.replace(/\s+/g, ' '));
+
       articles.push({
-        title: title.replace(/\s+/g, ' '),
+        title: cleanTitle,
         link,
         pubDate: yearMatch ? new Date(`${yearMatch[1]}-01-01`) : new Date(),
         source: 'EclipseWise',
-        description: `Upcoming eclipse event: ${title.replace(/\s+/g, ' ')}`,
+        description: `Upcoming eclipse event: ${cleanTitle}`,
       });
     });
 

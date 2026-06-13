@@ -3,15 +3,13 @@ import { join } from 'path';
 import { Article } from './types';
 import { translateTitle, translateDescription } from './translator';
 
+function formatDateUTC(date: Date): string {
+  return date.toISOString().split('T')[0] + ' ' + date.toUTCString().split(' ')[4];
+}
+
 export async function generateHtmlReport(articles: Article[]): Promise<string> {
   const now = new Date();
-  const dateStr = now.toLocaleDateString('zh-CN', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  const dateStr = formatDateUTC(now);
 
   const uniqueSources = new Set(articles.map((a) => a.source)).size;
 
@@ -216,7 +214,7 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
         <div class="header">
             <h1>AI Daily Report</h1>
             <div class="subtitle">AI 日报</div>
-            <div class="date">Generated: ${dateStr}</div>
+            <div class="date">Generated (UTC): ${dateStr}</div>
         </div>
 
         <div class="stats">
@@ -234,10 +232,7 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
 `;
 
   articles.forEach((article, index) => {
-    const time = article.pubDate.toLocaleTimeString('zh-CN', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+    const timeUTC = formatDateUTC(article.pubDate);
 
     const { en: titleEn, zh: titleZh } = translatedTitles[index];
     const { en: summaryEn, zh: summaryZh } = translatedDescriptions[index];
@@ -247,8 +242,8 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
                 <div class="article-title en"><a href="${article.link}" target="_blank">${titleEn}</a></div>
                 <div class="article-title zh">${titleZh}</div>
                 <div class="article-meta">
-                    <div><strong>Source:</strong> ${article.source} | <strong>Time:</strong> ${time}</div>
-                    <div><strong>来源:</strong> ${article.source} | <strong>时间:</strong> ${time}</div>
+                    <div><strong>Source:</strong> ${article.source} | <strong>Time (UTC):</strong> ${timeUTC}</div>
+                    <div><strong>来源:</strong> ${article.source} | <strong>时间 (UTC):</strong> ${timeUTC}</div>
                 </div>
                 <div class="article-summary">
                     <div class="summary-block en">${summaryEn}</div>
