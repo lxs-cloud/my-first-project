@@ -110,51 +110,6 @@ function isValidLink(link: string): boolean {
   return !invalidPatterns.some(pattern => pattern.test(link));
 }
 
-async function fetchArticleSummary(url: string): Promise<string> {
-  try {
-    const html = await fetchPage(url, 10000);
-    const $ = load(html);
-
-    // Remove navigation, headers, footers, sidebars
-    $('nav, header, footer, aside, script, style, .sidebar, .menu, .nav').remove();
-
-    // Try common article content selectors
-    const selectors = [
-      'article p',
-      '.article-content p',
-      '.content p',
-      '.post-content p',
-      '.entry-content p',
-      'main p',
-      '.detail p',
-      '.text p',
-      '#content p',
-      'p',
-    ];
-
-    for (const selector of selectors) {
-      const paragraphs = $(selector);
-      let summary = '';
-
-      paragraphs.each((_, elem) => {
-        if (summary.length >= 200) return;
-        const text = $(elem).text().trim();
-        if (text.length > 20) {
-          summary += (summary ? ' ' : '') + text;
-        }
-      });
-
-      if (summary.length > 30) {
-        return truncateAtSentence(summary, 300);
-      }
-    }
-
-    return '';
-  } catch {
-    return '';
-  }
-}
-
 export async function scrapeArXiv(): Promise<ScrapResult> {
   try {
     const html = await fetchPage('https://arxiv.org/list/astro-ph/new');
@@ -375,14 +330,6 @@ export async function scrapeNADC(): Promise<ScrapResult> {
         });
       } catch {
         // /article 页面也可能失败，忽略
-      }
-    }
-
-    // 对摘要为空或等于标题的文章，进入文章页抓取正文摘要
-    for (const article of articles) {
-      if (!article.description || article.description === article.title) {
-        const summary = await fetchArticleSummary(article.link);
-        if (summary) article.description = summary;
       }
     }
 

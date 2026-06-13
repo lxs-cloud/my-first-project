@@ -1,8 +1,8 @@
 # Astronomy Daily Report
 # 天文日报
 
-**Generated (UTC)**: 2026-06-13 12:22:39
-**生成时间 (UTC)**: 2026-06-13 12:22:39
+**Generated (UTC)**: 2026-06-13 12:13:31
+**生成时间 (UTC)**: 2026-06-13 12:13:31
 
 ## 📊 Statistics
 ## 📊 统计
@@ -14,159 +14,155 @@
 ## 📰 文章列表
 
 ### 1. [Annular Solar Eclipse of February 6, 2027](https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Feb06Aprime.html)
-### 1. [Annular Solar Eclipse of February 6, 2027](https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Feb06Aprime.html)
+### 1. [2027年2月6日日环食](https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Feb06Aprime.html)
 
 **Source**: EclipseWise | **Time (UTC)**: 2027-01-01 00:00:00
 **来源**: EclipseWise | **时间 (UTC)**: 2027-01-01 00:00:00
 
 > Upcoming eclipse event: Annular Solar Eclipse of February 6, 2027
-> Upcoming eclipse event: Annular Solar Eclipse of February 6, 2027
+> 即将到来的日食活动： 2027年2月6日的日环食
 
 ### 2. [Interplanetary Earth](https://apod.nasa.gov/apod/)
-### 2. [Interplanetary Earth](https://apod.nasa.gov/apod/)
+### 2. [行星际地球](https://apod.nasa.gov/apod/)
 
-**Source**: APOD | **Time (UTC)**: 2026-06-13 12:22:31
-**来源**: APOD | **时间 (UTC)**: 2026-06-13 12:22:31
+**Source**: APOD | **Time (UTC)**: 2026-06-13 12:13:30
+**来源**: APOD | **时间 (UTC)**: 2026-06-13 12:13:30
 
 > In an interplanetary first, on July 19, 2013 Earth was photographed on the same day from two other worlds of the Solar System, innermost planet Mercury and ringed gas giant Saturn.……
-> In an interplanetary first, on July 19, 2013 Earth was photographed on the same day from two other worlds of the Solar System, innermost planet Mercury and ringed gas giant Saturn.……
+> 在2013年7月19日的行星际首次拍摄中，地球在同一天从太阳系的另外两个世界拍摄，最里面的行星水星和环状气体巨星土星。……
 
+### 3. [National Astronomical Science Data Center Science Platform Application Subject Solicitation Results Announcement](https://nadc.china-vo.org/article/20260522112622)
 ### 3. [国家天文科学数据中心科学平台应用课题征集结果公布](https://nadc.china-vo.org/article/20260522112622)
-### 3. [国家天文科学数据中心科学平台应用课题征集结果公布](https://nadc.china-vo.org/article/20260522112622)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 国家天文科学数据中心于2026年4月发布《国家天文科学数据中心科学平台应用课题征集通知》。根据课题申请情况和中心科学平台资源安排，以下应用课题获得中心科学平台2026年资源（数据、算力、存储）支持，现予以公布。 国家天文科学数据中心
-                                            2026年5月20日
-> 国家天文科学数据中心于2026年4月发布《国家天文科学数据中心科学平台应用课题征集通知》。根据课题申请情况和中心科学平台资源安排，以下应用课题获得中心科学平台2026年资源（数据、算力、存储）支持，现予以公布。 国家天文科学数据中心
-                                            2026年5月20日
+> National Astronomical Science Data Center Science Platform Application Subject Solicitation Results Announcement
+> 国家天文科学数据中心科学平台应用课题征集结果公布
 
-### 4. [NADC助力中国“天关”成为正在崛起的国际空间科学新高地](https://nadc.china-vo.org/article/20260511161152)
+### 4. [NADC helps China's "Tianguan" become a rising international space science new highland](https://nadc.china-vo.org/article/20260511161152)
 ### 4. [NADC助力中国“天关”成为正在崛起的国际空间科学新高地](https://nadc.china-vo.org/article/20260511161152)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 2026年初，国际天体物理学界发布的一项统计研究显示，在2025年发表的前沿研究成果中，中国科学院“天关”卫星的成果影响力在全球空间和地面天文望远镜中名列前茅，甚至超越了诸多国际知名设备。 袁为民在解释“天关”卫星的原理。受访者供图 “超额完成预期目标。”近期，在接受《中国科学报》采访时，“天关”卫星首席科学家、中国科学院国家天文台研究员袁为民说，这一成绩既得益于卫星的卓越性能，也受益于中国科学院《关于加强基础研究的若干意见》（“基础研究十条”）确定的聚焦前沿科学问题、建制化组织科研以及深度融入国际合作等核心理念。
-> 2026年初，国际天体物理学界发布的一项统计研究显示，在2025年发表的前沿研究成果中，中国科学院“天关”卫星的成果影响力在全球空间和地面天文望远镜中名列前茅，甚至超越了诸多国际知名设备。 袁为民在解释“天关”卫星的原理。受访者供图 “超额完成预期目标。”近期，在接受《中国科学报》采访时，“天关”卫星首席科学家、中国科学院国家天文台研究员袁为民说，这一成绩既得益于卫星的卓越性能，也受益于中国科学院《关于加强基础研究的若干意见》（“基础研究十条”）确定的聚焦前沿科学问题、建制化组织科研以及深度融入国际合作等核心理念。
+> NADC helps China's "Tianguan" become a rising international space science new highland
+> NADC助力中国“天关”成为正在崛起的国际空间科学新高地
 
+### 5. [The 2nd inaugural meeting of the National Astronomical Science Data Center Council and Expert Committee and the Strategic Development Advisory Meeting were held in Beijing.](https://nadc.china-vo.org/article/20260430113454)
 ### 5. [国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在京召开](https://nadc.china-vo.org/article/20260430113454)
-### 5. [国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在京召开](https://nadc.china-vo.org/article/20260430113454)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 2026年4月28日，国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在中国科学院国家天文台举行。科技部四司、国家科技基础条件平台中心、中国信息协会、中国科学院科技基础能力局、中国科学院各天文台有关领导，以及中心第二届理事会理事、专家委员会委员、中心工作团队成员线上线下共同参会。会议由国家天文台副台长、国家天文科学数据中心主任赵公博研究员主持。 图2  国家天文台副台长、国家天文科学数据中心主任赵公博研究员主持会议
-> 2026年4月28日，国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在中国科学院国家天文台举行。科技部四司、国家科技基础条件平台中心、中国信息协会、中国科学院科技基础能力局、中国科学院各天文台有关领导，以及中心第二届理事会理事、专家委员会委员、中心工作团队成员线上线下共同参会。会议由国家天文台副台长、国家天文科学数据中心主任赵公博研究员主持。 图2  国家天文台副台长、国家天文科学数据中心主任赵公博研究员主持会议
+> The 2nd inaugural meeting of the National Astronomical Science Data Center Council and Expert Committee and the Strategic Development Advisory Meeting were held in Beijing.
+> 国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在京召开
 
+### 6. [Virtual Observatory Recruitment | Multiple vacancies, inviting you to a new journey](https://nadc.china-vo.org/article/20260409163224)
 ### 6. [虚拟天文台招聘｜多个岗位虚位以待，邀你共赴新程](https://nadc.china-vo.org/article/20260409163224)
-### 6. [虚拟天文台招聘｜多个岗位虚位以待，邀你共赴新程](https://nadc.china-vo.org/article/20260409163224)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 因业务发展需要，中国科学院国家天文台天文信息技术研究团组（即“虚拟天文台”，简称VO团组）现招聘以下岗位： 学习能力,创新能力,团队合作,责任心,沟通能力,主动性 分析解决问题能力,严谨性,逻辑能力,目标意识,抗压能力 学习能力,创新能力,团队合作,责任心,沟通能力,主动性 分析解决问题能力,严谨性,逻辑能力,目标意识,抗压能力 3、数据收集与整编主管（简历投递点击这里） 学习能力,创新能力,团队合作,责任心,沟通能力,主动性
-> 因业务发展需要，中国科学院国家天文台天文信息技术研究团组（即“虚拟天文台”，简称VO团组）现招聘以下岗位： 学习能力,创新能力,团队合作,责任心,沟通能力,主动性 分析解决问题能力,严谨性,逻辑能力,目标意识,抗压能力 学习能力,创新能力,团队合作,责任心,沟通能力,主动性 分析解决问题能力,严谨性,逻辑能力,目标意识,抗压能力 3、数据收集与整编主管（简历投递点击这里） 学习能力,创新能力,团队合作,责任心,沟通能力,主动性
+> Virtual Observatory Recruitment | Multiple vacancies, inviting you to a new journey
+> 虚拟天文台招聘｜多个岗位虚位以待，邀你共赴新程
 
+### 7. [Alert: Beijing wins right to host 2028 ADASS International Conference](https://nadc.china-vo.org/article/20260326164400)
 ### 7. [快讯：北京获得2028年ADASS国际会议举办权](https://nadc.china-vo.org/article/20260326164400)
-### 7. [快讯：北京获得2028年ADASS国际会议举办权](https://nadc.china-vo.org/article/20260326164400)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 天文数据分析软件与系统（Astronomical Data Analysis Software and Systems，简称ADASS）是天文软件与数据处理领域历史最悠久、影响力最大、参加人数最多的系列国际学术会议，每年举行一次。1991年11月，第一届ADASS会议在位于美国亚利桑那州图森的原美国国立光学天文台举行。截至2025年，ADASS已成功举办到第35届。ADASS 2026今年秋天将在澳大利亚Perth举行。
-> 天文数据分析软件与系统（Astronomical Data Analysis Software and Systems，简称ADASS）是天文软件与数据处理领域历史最悠久、影响力最大、参加人数最多的系列国际学术会议，每年举行一次。1991年11月，第一届ADASS会议在位于美国亚利桑那州图森的原美国国立光学天文台举行。截至2025年，ADASS已成功举办到第35届。ADASS 2026今年秋天将在澳大利亚Perth举行。
+> Alert: Beijing wins right to host 2028 ADASS International Conference
+> 快讯：北京获得2028年ADASS国际会议举办权
 
+### 8. [NADC young data scientists use LAMOST data to make new advances in the study of the physical parameters of connected binary stars](https://nadc.china-vo.org/article/20260608110044)
 ### 8. [NADC青年数据科学家利用LAMOST数据在相接双星物理参数研究方面取得新进展](https://nadc.china-vo.org/article/20260608110044)
-### 8. [NADC青年数据科学家利用LAMOST数据在相接双星物理参数研究方面取得新进展](https://nadc.china-vo.org/article/20260608110044)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 近日，NADC青年数据科学家、山东大学李凯教授团队基于LAMOST中分辨率光谱数据与ASAS-SN、TESS测光数据，对146颗相接双星的物理参数进行了系统分析，成功获取了包括质量、半径、光度在内的高精度物理参数，并发现了一个目前已知相接度最高的相接双星，成为未来恒星合并事件的重要候选体。相关成果以“Physical Parameters of 146 Contact Binaries Derived from Light and Radial Velocity Curves”为题发表于天文学期刊 《天体物理学报增刊》（ApJS）。论文链接：https://doi.org/10.……
-> 近日，NADC青年数据科学家、山东大学李凯教授团队基于LAMOST中分辨率光谱数据与ASAS-SN、TESS测光数据，对146颗相接双星的物理参数进行了系统分析，成功获取了包括质量、半径、光度在内的高精度物理参数，并发现了一个目前已知相接度最高的相接双星，成为未来恒星合并事件的重要候选体。相关成果以“Physical Parameters of 146 Contact Binaries Derived from Light and Radial Velocity Curves”为题发表于天文学期刊 《天体物理学报增刊》（ApJS）。论文链接：https://doi.org/10.……
+> NADC young data scientists use LAMOST data to make new advances in the study of the physical parameters of connected binary stars
+> NADC青年数据科学家利用LAMOST数据在相接双星物理参数研究方面取得新进展
 
+### 9. [National Astronomical Observatory research team reveals new clues about the history of the formation of halo star clusters in the Andromeda Galaxy](https://nadc.china-vo.org/article/20260605105802)
 ### 9. [国家天文台研究团队揭示仙女座星系晕星团形成历史新线索](https://nadc.china-vo.org/article/20260605105802)
-### 9. [国家天文台研究团队揭示仙女座星系晕星团形成历史新线索](https://nadc.china-vo.org/article/20260605105802)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 近日，国家天文科学数据中心专家委员会主任委员、中国科学院国家天文台赵刚院士团队利用兴隆基地2.16米望远镜光谱数据及多波段测光数据，对仙女座星系（M31）晕中29个星团进行了联合分析，成果以"The Spectroscopic and Photometric Study of a Star Cluster Sample in Andromeda Halo"为题发表于《The Astronomical Journal》。论文链接：点击这里
-> 近日，国家天文科学数据中心专家委员会主任委员、中国科学院国家天文台赵刚院士团队利用兴隆基地2.16米望远镜光谱数据及多波段测光数据，对仙女座星系（M31）晕中29个星团进行了联合分析，成果以"The Spectroscopic and Photometric Study of a Star Cluster Sample in Andromeda Halo"为题发表于《The Astronomical Journal》。论文链接：点击这里
+> National Astronomical Observatory research team reveals new clues about the history of the formation of halo star clusters in the Andromeda Galaxy
+> 国家天文台研究团队揭示仙女座星系晕星团形成历史新线索
 
+### 10. [Tianguan satellite obtained the most complete X-ray image of supernova remnant W28 to date](https://nadc.china-vo.org/article/20260602093747)
 ### 10. [天关卫星获得迄今为止最完整超新星遗迹W28的X射线图像](https://nadc.china-vo.org/article/20260602093747)
-### 10. [天关卫星获得迄今为止最完整超新星遗迹W28的X射线图像](https://nadc.china-vo.org/article/20260602093747)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 超新星遗迹是大质量恒星在生命末期发生剧烈爆炸后，抛射出的气体和尘埃与星际介质相互碰撞、膨胀形成的结构——也就是“宇宙焰火”熄灭之后的残骸。超新星遗迹W28是天文学家眼中“热混合型”超新星遗迹的原型天体之一，但其完整的X射线面貌长期未能被清晰呈现。由中国科学院主导研制的 “天关”卫星（爱因斯坦探针，EP）上搭载的“风行天”X射线后随望远镜（FXT），在卫星发射后的早期在轨测试阶段对W28进行了观测，得到了迄今为止最完整的X射线光谱成像。……
-> 超新星遗迹是大质量恒星在生命末期发生剧烈爆炸后，抛射出的气体和尘埃与星际介质相互碰撞、膨胀形成的结构——也就是“宇宙焰火”熄灭之后的残骸。超新星遗迹W28是天文学家眼中“热混合型”超新星遗迹的原型天体之一，但其完整的X射线面貌长期未能被清晰呈现。由中国科学院主导研制的 “天关”卫星（爱因斯坦探针，EP）上搭载的“风行天”X射线后随望远镜（FXT），在卫星发射后的早期在轨测试阶段对W28进行了观测，得到了迄今为止最完整的X射线光谱成像。……
+> Tianguan satellite obtained the most complete X-ray image of supernova remnant W28 to date
+> 天关卫星获得迄今为止最完整超新星遗迹W28的X射线图像
 
+### 11. [The end of the 0.1 pc myth: the true width of the molecular cloud fiber is 100 times different, and the three-dimensional true body is far thinner than the projection "thin"](https://nadc.china-vo.org/article/20260529094856)
 ### 11. [0.1 pc神话落幕：分子云纤维真实宽度相差百倍，三维真身远比投影“瘦削”](https://nadc.china-vo.org/article/20260529094856)
-### 11. [0.1 pc神话落幕：分子云纤维真实宽度相差百倍，三维真身远比投影“瘦削”](https://nadc.china-vo.org/article/20260529094856)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 纤维状结构是分子云中致密气体的主要载体，孕育了绝大多数恒星胚胎。过去十多年，天文学界普遍相信这些纤维宽度约为0.1 pc，且不随环境变化。然而，由国家天文台张国印博士主导，与法国原子能署Alexander Menshchikov博士及国家天文台李金增研究员合作完成的一项最新研究颠覆了这一认知。研究团队发现，纤维的宽度从不足0.01 pc跨越到超过1 pc，跨度高达两个数量级。曾被反复引用的“0.1 pc普适宽度”，其实只是将不同尺度纤维混合平均后产生的统计效应。该成果已被《天文学与天体物理学》（A&A）接收发表。论文链接：点击这里。
-> 纤维状结构是分子云中致密气体的主要载体，孕育了绝大多数恒星胚胎。过去十多年，天文学界普遍相信这些纤维宽度约为0.1 pc，且不随环境变化。然而，由国家天文台张国印博士主导，与法国原子能署Alexander Menshchikov博士及国家天文台李金增研究员合作完成的一项最新研究颠覆了这一认知。研究团队发现，纤维的宽度从不足0.01 pc跨越到超过1 pc，跨度高达两个数量级。曾被反复引用的“0.1 pc普适宽度”，其实只是将不同尺度纤维混合平均后产生的统计效应。该成果已被《天文学与天体物理学》（A&A）接收发表。论文链接：点击这里。
+> The end of the 0.1 pc myth: the true width of the molecular cloud fiber is 100 times different, and the three-dimensional true body is far thinner than the projection "thin"
+> 0.1 pc神话落幕：分子云纤维真实宽度相差百倍，三维真身远比投影“瘦削”
 
+### 12. [New Progress in Sunspot Bright Bridge Jet Study at Yunnan Observatory](https://nadc.china-vo.org/article/20260527093428)
 ### 12. [云南天文台太阳黑子亮桥喷流研究中取得新进展](https://nadc.china-vo.org/article/20260527093428)
-### 12. [云南天文台太阳黑子亮桥喷流研究中取得新进展](https://nadc.china-vo.org/article/20260527093428)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 近日，云南天文台抚仙湖太阳观测和研究基地青年副研究员段雅丹及其合作者，利用抚仙湖一米新真空太阳望远镜（NVST）色球高分辨观测数据，研究了复发的亮桥喷流及其底部亮点滑动运动的触发机制。相关工作已于2026年5月20日正式发表在国际学术期刊《天体物理学杂志快报》（The Astrophysical Journal Letters）上。论文链接：点击这里。 太阳黑子拥有太阳最强的磁场环境，其中的亮桥喷流为研究黑子内部的小尺度爆发活动提供了独特的窗口。一般成熟黑子亮桥上的磁场强度约为1000G，比临近本影的磁场强度弱（～3500G），亮桥的磁场方向也相对水平。……
-> 近日，云南天文台抚仙湖太阳观测和研究基地青年副研究员段雅丹及其合作者，利用抚仙湖一米新真空太阳望远镜（NVST）色球高分辨观测数据，研究了复发的亮桥喷流及其底部亮点滑动运动的触发机制。相关工作已于2026年5月20日正式发表在国际学术期刊《天体物理学杂志快报》（The Astrophysical Journal Letters）上。论文链接：点击这里。 太阳黑子拥有太阳最强的磁场环境，其中的亮桥喷流为研究黑子内部的小尺度爆发活动提供了独特的窗口。一般成熟黑子亮桥上的磁场强度约为1000G，比临近本影的磁场强度弱（～3500G），亮桥的磁场方向也相对水平。……
+> New Progress in Sunspot Bright Bridge Jet Study at Yunnan Observatory
+> 云南天文台太阳黑子亮桥喷流研究中取得新进展
 
+### 13. [The National Astronomical Science Data Center gives Cold Lake location scientists peace of mind](https://nadc.china-vo.org/article/20211216173556)
 ### 13. [国家天文科学数据中心让冷湖选址科学家后顾无忧](https://nadc.china-vo.org/article/20211216173556)
-### 13. [国家天文科学数据中心让冷湖选址科学家后顾无忧](https://nadc.china-vo.org/article/20211216173556)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 对天文学而言，大型设备和与之匹配的仪器在现代和未来天文学、物理学领域中探索极致问题时仍不可或缺，而由于技术的限制，我们不可能把超大型的设备送入太空，天文学家仍然需要建设地基望远镜进行观测。
-重大天文观测设施台址的选择，是一个严肃的科学问题，容不得各种其他因素的干扰。然而大型科学装置对现代文旅业发展有巨大的牵引力，选址实际上隐含了一种利益上的竞争。2018年，我国天文学家确定在冷湖赛什腾山区4200米海拔标高点（C区）进行定点选址。为保障冷湖选址的纯科学性，冷湖选址项目组计划采取完全透明的数据发布策略。
-> 对天文学而言，大型设备和与之匹配的仪器在现代和未来天文学、物理学领域中探索极致问题时仍不可或缺，而由于技术的限制，我们不可能把超大型的设备送入太空，天文学家仍然需要建设地基望远镜进行观测。
-重大天文观测设施台址的选择，是一个严肃的科学问题，容不得各种其他因素的干扰。然而大型科学装置对现代文旅业发展有巨大的牵引力，选址实际上隐含了一种利益上的竞争。2018年，我国天文学家确定在冷湖赛什腾山区4200米海拔标高点（C区）进行定点选址。为保障冷湖选址的纯科学性，冷湖选址项目组计划采取完全透明的数据发布策略。
+> The National Astronomical Science Data Center gives Cold Lake location scientists peace of mind
+> 国家天文科学数据中心让冷湖选址科学家后顾无忧
 
-### 14. [经典服务案例：郭守敬望远镜光谱巡天数据全生命周期服务](https://nadc.china-vo.org/article/20200202160224)
+### 14. [Classic Service Case: Guo Shoujing Telescope Spectral Sky Survey Data Full Lifecycle Service](https://nadc.china-vo.org/article/20200202160224)
 ### 14. [经典服务案例：郭守敬望远镜光谱巡天数据全生命周期服务](https://nadc.china-vo.org/article/20200202160224)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 郭守敬望远镜运行维护团队、使用郭守敬望远镜观测数据的国内外科研、教育工作者及学生、天文爱好者 郭守敬望远镜（Large Sky Area Multi-Object Fiber Spectroscopy Telescope，大天区面积多目标光纤光谱天文望远镜，以下简称LAMOST）是中国天文界第一个国家重大科技基础设施，是世界上光谱获取率最高的天文望远镜，其收集的天体光谱数量远超过全世界其他望远镜获取的光谱数总和。LAMOST光谱数据库是世界上最大的天体光谱数据库。中心提供的全生命周期服务已成为LAMOST数据从观测获取，到发布，再到天文学家下载并进行科学研究整个生命周期不可或缺的支撑部分。
-> 郭守敬望远镜运行维护团队、使用郭守敬望远镜观测数据的国内外科研、教育工作者及学生、天文爱好者 郭守敬望远镜（Large Sky Area Multi-Object Fiber Spectroscopy Telescope，大天区面积多目标光纤光谱天文望远镜，以下简称LAMOST）是中国天文界第一个国家重大科技基础设施，是世界上光谱获取率最高的天文望远镜，其收集的天体光谱数量远超过全世界其他望远镜获取的光谱数总和。LAMOST光谱数据库是世界上最大的天体光谱数据库。中心提供的全生命周期服务已成为LAMOST数据从观测获取，到发布，再到天文学家下载并进行科学研究整个生命周期不可或缺的支撑部分。
+> Classic Service Case: Guo Shoujing Telescope Spectral Sky Survey Data Full Lifecycle Service
+> 经典服务案例：郭守敬望远镜光谱巡天数据全生命周期服务
 
+### 15. [Classic service case: 500-meter aperture spherical radio telescope technical support service](https://nadc.china-vo.org/article/20200202160711)
 ### 15. [经典服务案例：500米口径球面射电望远镜技术支持服务](https://nadc.china-vo.org/article/20200202160711)
-### 15. [经典服务案例：500米口径球面射电望远镜技术支持服务](https://nadc.china-vo.org/article/20200202160711)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 500米口径球面射电望远镜运行维护团队和科学用户 500米口径球面射电望远镜（Five-hundred-meter Aperture Spherical radio Telescope，简称FAST）是国家“十一五”重大科技基础设施建设项目，由中国科学院国家天文台主导建设，具有我国自主知识产权，是世界最大单口径、最灵敏的射电望远镜，被誉为“中国天眼”。FAST于2016年9月25日落成，2020年1月11日通过国家验收，正式开放运行。
-> 500米口径球面射电望远镜运行维护团队和科学用户 500米口径球面射电望远镜（Five-hundred-meter Aperture Spherical radio Telescope，简称FAST）是国家“十一五”重大科技基础设施建设项目，由中国科学院国家天文台主导建设，具有我国自主知识产权，是世界最大单口径、最灵敏的射电望远镜，被誉为“中国天眼”。FAST于2016年9月25日落成，2020年1月11日通过国家验收，正式开放运行。
+> Classic service case: 500-meter aperture spherical radio telescope technical support service
+> 经典服务案例：500米口径球面射电望远镜技术支持服务
 
+### 16. [Classic service case: domestic core ground-based telescope data lifecycle service](https://nadc.china-vo.org/article/20200202160804)
 ### 16. [经典服务案例：国内核心地基望远镜数据全生命周期服务](https://nadc.china-vo.org/article/20200202160804)
-### 16. [经典服务案例：国内核心地基望远镜数据全生命周期服务](https://nadc.china-vo.org/article/20200202160804)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 国内核心天文观测设备运行维护团队和科学用户 天文学是一门最古老但又常新的自然科学，其研究依赖于严谨的观测数据和基于数据的推理演绎。从天文数据中提取宝贵的科学知识，往往需要多种观测设备、几代研究学者经年累月的艰辛付出。随着我国科技实力的增强，建立了一批天文望远镜，如：兴隆2.16米望远镜、丽江2.4米望远镜、兴隆85厘米望远镜、兴隆80厘米望远镜、兴隆60厘米望远镜、BATC大视场巡天、南极巡天望远镜（AST3）、南极中国之星小望远镜阵（CSTAR）、中国恒星观测网络（SONG）、上海天马射电望远镜、上海佘山1.……
-> 国内核心天文观测设备运行维护团队和科学用户 天文学是一门最古老但又常新的自然科学，其研究依赖于严谨的观测数据和基于数据的推理演绎。从天文数据中提取宝贵的科学知识，往往需要多种观测设备、几代研究学者经年累月的艰辛付出。随着我国科技实力的增强，建立了一批天文望远镜，如：兴隆2.16米望远镜、丽江2.4米望远镜、兴隆85厘米望远镜、兴隆80厘米望远镜、兴隆60厘米望远镜、BATC大视场巡天、南极巡天望远镜（AST3）、南极中国之星小望远镜阵（CSTAR）、中国恒星观测网络（SONG）、上海天马射电望远镜、上海佘山1.……
+> Classic service case: domestic core ground-based telescope data lifecycle service
+> 经典服务案例：国内核心地基望远镜数据全生命周期服务
 
+### 17. [Classic service case: Astronomical film digitization project data exchange and technical services](https://nadc.china-vo.org/article/20200202160847)
 ### 17. [经典服务案例：天文底片数字化项目数据汇交与技术服务](https://nadc.china-vo.org/article/20200202160847)
-### 17. [经典服务案例：天文底片数字化项目数据汇交与技术服务](https://nadc.china-vo.org/article/20200202160847)
 
-**Source**: NADC | **Time (UTC)**: 2026-06-13 12:22:29
-**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:22:29
+**Source**: NADC | **Time (UTC)**: 2026-06-13 12:13:28
+**来源**: NADC | **时间 (UTC)**: 2026-06-13 12:13:28
 
-> 天文底片数字化项目组，天文学、地球物理学等领域科学用户 国家科技基础性工作专项项目“天文底片数字化”通过高精度底片扫描仪完成对国家天文台、紫金山天文台、上海天文台、云南天文台等自1901年至1999年跨越一个世纪的天文底片进行扫描和数字化。 宇宙中所有的天体都处于不断的运动和变化之中，这些变化有的是无规律的突变天象，有的则是可预期的或具有重复性特征(如双星轨道、变星、耀星、行星、活动星系核、周期彗星等)。利用各种技术手段对各类天体进行长期累积观测，是开展天文学研究的重要手段。不少天象发生的时间尺度涵盖几十年、上百年甚至更长的时间，需要长期积累的观测资料才有可能对其开展研究。……
-> 天文底片数字化项目组，天文学、地球物理学等领域科学用户 国家科技基础性工作专项项目“天文底片数字化”通过高精度底片扫描仪完成对国家天文台、紫金山天文台、上海天文台、云南天文台等自1901年至1999年跨越一个世纪的天文底片进行扫描和数字化。 宇宙中所有的天体都处于不断的运动和变化之中，这些变化有的是无规律的突变天象，有的则是可预期的或具有重复性特征(如双星轨道、变星、耀星、行星、活动星系核、周期彗星等)。利用各种技术手段对各类天体进行长期累积观测，是开展天文学研究的重要手段。不少天象发生的时间尺度涵盖几十年、上百年甚至更长的时间，需要长期积累的观测资料才有可能对其开展研究。……
+> Classic service case: Astronomical film digitization project data exchange and technical services
+> 经典服务案例：天文底片数字化项目数据汇交与技术服务
 
