@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { scrapeAllSources, fetchAllSummaries } from './scrapers';
+import { scrapeAllSources } from './scrapers';
 import {
   filterLast24Hours,
   sortByTimeDesc,
@@ -34,10 +34,6 @@ async function main() {
 
     // 按时间排序
     const sorted = sortByTimeDesc(recent);
-
-    // 获取缺失的文章摘要
-    console.log('📖 正在获取文章摘要...');
-    await fetchAllSummaries(sorted);
 
     // 生成Markdown（需要等待翻译）
     console.log('🌐 正在翻译摘要...');

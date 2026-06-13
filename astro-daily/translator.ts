@@ -119,7 +119,8 @@ export async function translateTitle(title: string): Promise<{
   if (!title) return { en: '', zh: '' };
 
   if (isChinese(title)) {
-    return { en: title, zh: title };
+    const en = await translateZhToEn(title);
+    return { en, zh: title };
   } else if (isEnglish(title)) {
     const zh = await translateEnToZh(title);
     return { en: title, zh };
@@ -139,7 +140,8 @@ export async function translateDescription(description: string | undefined): Pro
   }
 
   if (isChinese(text)) {
-    return { en: text, zh: text };
+    const en = await translateZhToEn(text);
+    return { en, zh: text };
   } else if (isEnglish(text)) {
     const zh = await translateEnToZh(text);
     return { en: text, zh };

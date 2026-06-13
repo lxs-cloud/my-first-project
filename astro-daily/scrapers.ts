@@ -591,52 +591,6 @@ export async function scrapeEclipsewise(): Promise<ScrapResult> {
   }
 }
 
-export async function fetchArticleSummary(article: Article): Promise<string> {
-  if (article.description && article.description !== article.title && article.description.length > article.title.length + 20) {
-    return article.description;
-  }
-
-  try {
-    const html = await fetchPage(article.link, 10000);
-    const $ = load(html);
-
-    $('script, style, nav, header, footer, aside').remove();
-
-    const paragraphs: string[] = [];
-    $('p').each((_, elem) => {
-      const text = $(elem).text().trim().replace(/\s+/g, ' ');
-      if (text.length > 50) {
-        paragraphs.push(text);
-      }
-    });
-
-    if (paragraphs.length > 0) {
-      const desc = paragraphs[0].slice(0, 300);
-      return desc;
-    }
-  } catch {
-    // fetch failed, keep existing description
-  }
-
-  return article.description || article.title;
-}
-
-export async function fetchAllSummaries(articles: Article[]): Promise<void> {
-  const needsSummary = articles.filter(
-    (a) => !a.description || a.description === a.title || a.description.length <= a.title.length + 10
-  );
-
-  const results = await Promise.allSettled(
-    needsSummary.map((article) => fetchArticleSummary(article))
-  );
-
-  results.forEach((result, index) => {
-    if (result.status === 'fulfilled') {
-      needsSummary[index].description = result.value;
-    }
-  });
-}
-
 export async function scrapeAllSources(): Promise<{ articles: Article[]; errors: string[] }> {
   const results = await Promise.allSettled([
     scrapeArXiv(),
