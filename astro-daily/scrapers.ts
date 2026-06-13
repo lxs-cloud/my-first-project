@@ -32,6 +32,20 @@ async function fetchPage(url: string, timeout = 15000): Promise<string> {
   return response.text();
 }
 
+function truncateAtSentence(text: string, maxLen: number): string {
+  if (!text || text.length <= maxLen) return text;
+  const truncated = text.slice(0, maxLen);
+  const sentenceEnd = truncated.match(/.*[.!?。！？]/s);
+  if (sentenceEnd && sentenceEnd[0].length > maxLen * 0.4) {
+    return sentenceEnd[0].trimEnd() + '……';
+  }
+  const lastSpace = truncated.lastIndexOf(' ');
+  if (lastSpace > maxLen * 0.4) {
+    return truncated.slice(0, lastSpace).trimEnd() + '……';
+  }
+  return truncated.trimEnd() + '……';
+}
+
 function parseDate(dateStr: string | undefined): Date {
   if (!dateStr) return new Date();
 
@@ -111,7 +125,7 @@ export async function scrapeArXiv(): Promise<ScrapResult> {
       const linkElem = $next.find('a[title="Abstract"]');
       const link = linkElem.attr('href') ? `https://arxiv.org${linkElem.attr('href')}` : '';
       const dateStr = $elem.find('.list-dateline').text();
-      const desc = $next.find('div.list-authors').text().slice(0, 200);
+      const desc = truncateAtSentence($next.find('div.list-authors').text(), 200);
 
       if (title && link) {
         articles.push({ title, link, pubDate: parseDate(dateStr), source: 'arXiv', description: desc || title });
@@ -137,7 +151,7 @@ export async function scrapeESO(): Promise<ScrapResult> {
       const title = titleLink.text().trim();
       const link = titleLink.attr('href');
       const dateStr = $elem.find('.release-date, .date, time').first().text().trim();
-      const desc = $elem.find('p, .description').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p, .description').first().text(), 200);
 
       if (title && link) {
         articles.push({ title, link: link.startsWith('http') ? link : `https://www.eso.org${link}`, pubDate: parseDate(dateStr), source: 'ESO', description: desc || title });
@@ -169,7 +183,7 @@ export async function scrapeNASANEA(): Promise<ScrapResult> {
         const titleLink = $(cells[1]).find('a');
         const title = titleLink.text().trim();
         const link = titleLink.attr('href') || '';
-        const desc = $(cells[2]).text().slice(0, 200);
+        const desc = truncateAtSentence($(cells[2]).text(), 200);
 
         if (title && link && title.length > 3) {
           articles.push({
@@ -225,7 +239,7 @@ export async function scrapeAPOD(): Promise<ScrapResult> {
     const bodyText = $('body').text();
     const explanationMatch = bodyText.match(/Explanation:\s*([\s\S]*?)(?:Tomorrow's picture:|$)/);
     const description = explanationMatch
-      ? explanationMatch[1].trim().replace(/\s+/g, ' ').slice(0, 300)
+      ? truncateAtSentence(explanationMatch[1].trim().replace(/\s+/g, ' '), 300)
       : title;
 
     articles.push({
@@ -279,7 +293,7 @@ export async function scrapeNADC(): Promise<ScrapResult> {
       if (/\/article\/index\?/.test(link)) return;
 
       const dateStr = $elem.find('.date, .time, time, .published').text();
-      const desc = $elem.find('p').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p').first().text(), 200);
 
       articles.push({
         title,
@@ -347,7 +361,7 @@ export async function scrapeESA(): Promise<ScrapResult> {
                       $elem.find('.date, .published, [class*="date"]').first().text() ||
                       $elem.find('span').first().text();
 
-      const desc = $elem.find('p, .description, .summary').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p, .description, .summary').first().text(), 200);
 
       if (title && link && title.length > 3) {
         articles.push({
@@ -379,7 +393,7 @@ export async function scrapeHubbleSite(): Promise<ScrapResult> {
       const title = titleLink.text().trim();
       const link = titleLink.attr('href');
       const dateStr = $elem.find('time').text() || $elem.find('.date, .published').text();
-      const desc = $elem.find('p').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p').first().text(), 200);
 
       if (title && link && title.length > 3) {
         articles.push({ title, link: link?.startsWith('http') ? link : `https://hubblesite.org${link}`, pubDate: parseDate(dateStr), source: 'HubbleSite', description: desc || title });
@@ -410,7 +424,7 @@ export async function scrapeAstrobites(): Promise<ScrapResult> {
 
       const dateStr = $elem.find('time').attr('datetime') ||
                       $elem.find('.posted-on, .date, .published, [class*="time"]').first().text();
-      const desc = $elem.find('p, .summary, .description').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p, .summary, .description').first().text(), 200);
 
       if (title && link && title.length > 3) {
         articles.push({
@@ -447,7 +461,7 @@ export async function scrapeSkyScopeTelescope(): Promise<ScrapResult> {
 
       const dateStr = $elem.find('time').attr('datetime') ||
                       $elem.find('.publish-date, .date, [class*="time"]').first().text();
-      const desc = $elem.find('p, .description, .summary').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p, .description, .summary').first().text(), 200);
 
       if (title && link && title.length > 3) {
         articles.push({
@@ -479,7 +493,7 @@ export async function scrapeChineseMeteorological(): Promise<ScrapResult> {
       const title = titleLink.text().trim();
       const link = titleLink.attr('href');
       const dateStr = $elem.find('.date, .time, time, [class*="time"]').text();
-      const desc = $elem.find('p').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p').first().text(), 200);
 
       if (title && link && title.length > 5) {
         articles.push({ title, link: link?.startsWith('http') ? link : `https://www.cmse.gov.cn${link}`, pubDate: parseDate(dateStr), source: 'CMSE', description: desc || title });
@@ -509,7 +523,7 @@ export async function scrapeSkywatcher(): Promise<ScrapResult> {
       const link = titleLink.attr('href');
 
       const dateStr = $elem.find('time, .date, .posted, [class*="time"]').first().text();
-      const desc = $elem.find('p, .description, .summary').first().text().slice(0, 200);
+      const desc = truncateAtSentence($elem.find('p, .description, .summary').first().text(), 200);
 
       if (title && link && title.length > 5) {
         articles.push({
