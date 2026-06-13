@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Daily Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .date {
+            margin-top: 15px;
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px 40px;
+            background: #f8f9ff;
+            border-bottom: 1px solid #e0e0ff;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .article {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .article-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .article-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .article-title a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .article-title.en {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .article-title.zh {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .article-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .article-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .summary-block {
+            padding: 12px;
+            background: #f8f9ff;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+            line-height: 1.6;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .summary-block.zh {
+            border-left-color: #764ba2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 40px;
+            background: #f8f9ff;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .article-meta,
+            .article-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Daily Report</h1>
+            <div class="subtitle">AI 日报</div>
+            <div class="date">Generated: 2026/06/13 02:32</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value">10</div>
+                <div class="stat-label">Articles / 篇文章</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Sources / 个源</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="article">
+                <div class="article-number">1.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/12/spacex-ipo-everything-you-need-to-know/" target="_blank">SpaceX IPO: Everything you need to know</a></div>
+                <div class="article-title zh">SpaceX IPO ：您需要了解的一切</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 01:41</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 01:41</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">TechCrunch has followed SpaceX's start, struggles, and successes from the early days. And we're here for what happens next too. This package of SpaceX IPO coverage includes who stands to win (and maybe some who won't), pre-IPO deals, and what's tucked inside its S-1 registration document.</div>
+                    <div class="summary-block zh">TechCrunch跟随SpaceX的起步、挣扎和早期的成功。我们也会为接下来会发生什么而努力。这一揽子SpaceX IPO覆盖范围包括谁将赢得（也许有些人不会赢得） ， IPO前交易，以及其S-1注册文件中的内容。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">2.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/" target="_blank">Mistral is rumored to be raising €3B at €20B valuation</a></div>
+                <div class="article-title zh">传闻Mistral将以200亿欧元的估值筹集30亿欧元</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 01:38</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 01:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The funding round would value the company at around €20 billion (about $23.15 billion), nearly double its Series C valuation of €11.7 billion.</div>
+                    <div class="summary-block zh">这轮融资将使该公司的估值约为200亿欧元（约合231.5亿美元） ，几乎是其C轮估值117亿欧元的两倍。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">3.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/12/google-sues-alleged-chinese-cybercrime-operation-that-used-ai-to-send-scam-texts/" target="_blank">Google sues alleged Chinese cybercrime operation that used AI to send scam texts</a></div>
+                <div class="article-title zh">谷歌起诉涉嫌使用人工智能发送诈骗短信的中国网络犯罪活动</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 01:26</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 01:26</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The tech giant said a group called "Outsider Enterprise" used AI to scam hundreds of thousands of victims, sending 2.5 million text messages over a span of two weeks.</div>
+                    <div class="summary-block zh">这家科技巨头表示，一个名为“局外人企业”的组织使用人工智能来诈骗数十万受害者，在两周内发送了250万条短信。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">4.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/video/spacex-anthropic-and-openais-hot-ipo-summer/" target="_blank">SpaceX, Anthropic, and OpenAI’s hot IPO summer</a></div>
+                <div class="article-title zh">SpaceX、Anthropic和OpenAI的热门IPO夏季</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 00:23</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 00:23</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The IPO market is back, and it’s not the same companies leading the charge. FAANG had a good run, but a new acronym is taking over: MANGOS — Meta (or Microsoft, depending on who you ask), Anthropic, Nvidia, Google, OpenAI, and SpaceX. Half of that bunch is heading to public markets in the same window, and it’s a stress test for investors, for valuations, and for […]</div>
+                    <div class="summary-block zh">IPO市场又回来了，不是同一家公司在主导。FAANG的表现不错，但一个新的首字母缩略词正在接管： MANGOS — Meta （或微软，具体取决于您的要求）、Anthropic、Nvidia、Google、OpenAI和SpaceX。其中一半将在同一窗口内进入公开市场，这是对投资者、估值和[…]的压力测试。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">5.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/podcast/its-hot-ipo-summer-and-the-mangos-are-ripe/" target="_blank">It’s hot IPO summer, and the MANGOS are ripe</a></div>
+                <div class="article-title zh">现在是炎热的IPO夏天，芒果成熟了</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 23:50</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 23:50</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The IPO market is back, and it’s not the same companies leading the charge. FAANG had a good run, but a new acronym is taking over: MANGOS — Meta (or Microsoft, depending on who you ask), Anthropic, Nvidia, Google, OpenAI, and SpaceX. Half of that bunch is heading to public markets in the same window, and it’s a stress test for investors, for valuations, and for […]</div>
+                    <div class="summary-block zh">IPO市场又回来了，不是同一家公司在主导。FAANG的表现不错，但一个新的首字母缩略词正在接管： MANGOS — Meta （或微软，具体取决于您的要求）、Anthropic、Nvidia、Google、OpenAI和SpaceX。其中一半将在同一窗口内进入公开市场，这是对投资者、估值和[…]的压力测试。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">6.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/11/cheaper-faster-and-culturally-aware-avataars-video-ai-is-built-for-indias-scale/" target="_blank">Cheaper, faster, and culturally aware, Avataar&#8217;s video AI is built for India&#8217;s scale</a></div>
+                <div class="article-title zh">Avataar的视频人工智能更便宜、更快、更具文化意识，专为印度的规模而打造</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 12:30</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 12:30</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Avataar AI's distilled video model is priced at $0.005 for every second of generation.</div>
+                    <div class="summary-block zh">Avataar AI的蒸馏视频模型的价格为每秒0.005 $。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">7.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/11/theker-just-raised-85m-to-build-the-factory-robot-that-doesnt-specialize-in-anything/" target="_blank">Theker just raised $85M to build the factory robot that doesn&#8217;t specialize in anything</a></div>
+                <div class="article-title zh">Theker刚刚筹集了8500万美元，用于建造不擅长任何事情的工厂机器人</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 09:48</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 09:48</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Unlike humanoid robots designed around a fixed form — think Boston Dynamics — Theker's machines are built to be reconfigured.</div>
+                    <div class="summary-block zh">与围绕固定形式设计的人形机器人不同—想想波士顿动力公司— Theker的机器是为重新配置而构建的。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">8.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/" target="_blank">Jeff Bezos&#8217;s Prometheus raises $12B to build an &#8216;artificial general engineer&#8217; for the physical world</a></div>
+                <div class="article-title zh">杰夫·贝索斯（ Jeff Bezos ）的普罗米修斯（ Prometheus ）筹集了$ 120B ，为物理世界构建“人工总工程师”</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 09:04</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 09:04</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The new round values the physical AI startup that aims to automate heavy engineering and drug design at $41 billion.</div>
+                    <div class="summary-block zh">新一轮融资对这家物理AI初创公司的估值为410亿美元，该公司旨在实现重型工程和药物设计的自动化。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">9.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/" target="_blank">SpaceX officially prices shares at $135 in the largest IPO ever</a></div>
+                <div class="article-title zh">SpaceX在有史以来规模最大的IPO中正式定价为135 $</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 04:33</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 04:33</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Wits its official share pricing announcement, SpaceX's IPO has begun.</div>
+                    <div class="summary-block zh">在正式公布股票定价之前， SpaceX的IPO已经开始。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">10.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/11/spacex-spv-investors-wont-know-their-true-holdings-until-post-ipo-lock-ups-lift/" target="_blank">SpaceX SPV investors won&#8217;t know their true holdings until post-IPO lock-ups lift</a></div>
+                <div class="article-title zh">SpaceX SPV投资者在IPO后锁定解除之前不会知道他们的真实持股</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time:</strong> 03:58</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间:</strong> 03:58</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">After SpaceX makes its public debut, lower-tier SPV investors face hidden fees, lengthy payout delays, and the risk of outright fraud. ……</div>
+                    <div class="summary-block zh">SpaceX首次公开亮相后，低层SPV投资者将面临隐性费用、冗长的支付延迟以及彻底欺诈的风险。……</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>✨ Powered by AI Daily Report Generator | 由 AI 日报生成器提供</p>
+        </div>
+    </div>
+</body>
+</html>

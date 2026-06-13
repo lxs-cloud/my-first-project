@@ -1,0 +1,16 @@
+{
+  "name": "ai-daily",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx index.ts"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.4.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2"
+  }
+}

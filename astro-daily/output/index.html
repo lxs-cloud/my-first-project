@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Daily Reports</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .report-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .report-item {
+            padding: 15px 20px;
+            background: #f0f4ff;
+            border-left: 4px solid #1e3c72;
+            border-radius: 6px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .report-item:hover {
+            background: #e0e8ff;
+            border-left-color: #2a5298;
+            transform: translateX(5px);
+        }
+
+        .report-item .date {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+
+        .report-item .status {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .empty {
+            text-align: center;
+            color: #999;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #1e3c72;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #2a5298;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 Astronomy Daily Reports</h1>
+            <p>🔭 天文日报列表</p>
+        </div>
+
+        <div class="content">
+            <div class="report-list">
+                <a href="./astro-daily-2026-06-13.html" class="report-item">
+                    <div class="date">📅 2026-06-13</div>
+                    <div class="status">点击查看完整日报 →</div>
+                </a>
+            </div>
+            <a href="../" class="back-link">← 返回首页</a>
+        </div>
+    </div>
+</body>
+</html>
