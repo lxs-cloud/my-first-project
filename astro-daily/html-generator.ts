@@ -2,8 +2,7 @@ import { mkdir, writeFile, readdir } from 'fs/promises';
 import { join } from 'path';
 import { Article } from './types';
 import { formatDateUTC } from './article-utils';
-import { translateTitle } from './translator';
-import { summarizeArticle } from './summarizer';
+import { translateTitle, translateDescription } from './translator';
 
 export async function generateHtmlReport(articles: Article[]): Promise<string> {
   const now = new Date();
@@ -17,7 +16,7 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
   );
 
   const translatedDescriptions = await Promise.all(
-    articles.map((article) => summarizeArticle(article.title, article.description))
+    articles.map((article) => translateDescription(article.description))
   );
 
   let html = `<!DOCTYPE html>

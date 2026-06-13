@@ -1,8 +1,7 @@
 import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { Article } from './types';
-import { translateTitle } from './translator';
-import { summarizeArticle } from './summarizer';
+import { translateTitle, translateDescription } from './translator';
 
 function formatDateUTC(date: Date): string {
   return date.toISOString().split('T')[0] + ' ' + date.toUTCString().split(' ')[4];
@@ -20,7 +19,7 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
   );
 
   const translatedDescriptions = await Promise.all(
-    articles.map((article) => summarizeArticle(article.title, article.description))
+    articles.map((article) => translateDescription(article.description))
   );
 
   let html = `<!DOCTYPE html>

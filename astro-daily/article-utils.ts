@@ -1,6 +1,5 @@
 import { Article } from './types';
-import { translateTitle } from './translator';
-import { summarizeArticle } from './summarizer';
+import { translateDescription, translateTitle } from './translator';
 
 export function filterLast24Hours(articles: Article[]): Article[] {
   const now = new Date();
@@ -46,7 +45,7 @@ export async function generateMarkdown(articles: Article[]): Promise<string> {
   );
 
   const translatedDescriptions = await Promise.all(
-    articles.map((article) => summarizeArticle(article.title, article.description))
+    articles.map((article) => translateDescription(article.description))
   );
 
   articles.forEach((article, index) => {
