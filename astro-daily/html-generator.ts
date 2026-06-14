@@ -3,6 +3,7 @@ import { join } from 'path';
 import { Article } from './types';
 import { formatDateUTC } from './article-utils';
 import { translateTitle, translateDescription } from './translator';
+import { getReportFilename } from './date-utils';
 
 export async function generateHtmlReport(articles: Article[]): Promise<string> {
   const now = new Date();
@@ -265,10 +266,7 @@ export async function saveHtmlReport(html: string): Promise<string> {
   const outputDir = join(process.cwd(), 'output');
   await mkdir(outputDir, { recursive: true });
 
-  const now = new Date();
-  const dateStr = now.toISOString().split('T')[0];
-
-  const filename = `astro-daily-${dateStr}.html`;
+  const filename = getReportFilename('astro-daily') + '.html';
   const filepath = join(outputDir, filename);
   await writeFile(filepath, html, 'utf-8');
 

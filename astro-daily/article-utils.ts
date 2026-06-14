@@ -1,5 +1,6 @@
 import { Article } from './types';
 import { translateDescription, translateTitle } from './translator';
+import { getReportFilename } from './date-utils';
 
 export function filterLast24Hours(articles: Article[]): Article[] {
   const now = new Date();
@@ -65,10 +66,5 @@ export async function generateMarkdown(articles: Article[]): Promise<string> {
 }
 
 export function getOutputFilename(): string {
-  const now = new Date();
-  const dateStr = now
-    .toISOString()
-    .split('T')[0]
-    .replace(/\-/g, '-');
-  return `astro-daily-${dateStr}.md`;
+  return getReportFilename('astro-daily') + '.md';
 }

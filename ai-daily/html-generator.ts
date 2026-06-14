@@ -2,6 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { Article } from './types';
 import { translateTitle, translateDescription } from './translator';
+import { getReportFilename } from './date-utils';
 
 function formatDateUTC(date: Date): string {
   return date.toISOString().split('T')[0] + ' ' + date.toUTCString().split(' ')[4];
@@ -287,10 +288,7 @@ export async function saveHtmlReport(html: string): Promise<string> {
   const outputDir = join(process.cwd(), 'output');
   await mkdir(outputDir, { recursive: true });
 
-  const now = new Date();
-  const dateStr = now.toISOString().split('T')[0];
-
-  const filename = `ai-daily-${dateStr}.html`;
+  const filename = getReportFilename('ai-daily') + '.html';
   const filepath = join(outputDir, filename);
   await writeFile(filepath, html, 'utf-8');
 
