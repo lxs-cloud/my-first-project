@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Daily Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .date {
+            margin-top: 15px;
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px 40px;
+            background: #f0f4ff;
+            border-bottom: 1px solid #d0d8ff;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .article {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .article-number {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .article-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: #1e3c72;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .article-title a:hover {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+
+        .article-title.en {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .article-title.zh {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .article-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .article-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .summary-block {
+            padding: 12px;
+            background: #f8f9ff;
+            border-left: 3px solid #1e3c72;
+            border-radius: 4px;
+            line-height: 1.6;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .summary-block.zh {
+            border-left-color: #2a5298;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 40px;
+            background: #f8f9ff;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .article-meta,
+            .article-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔭 Astronomy Daily Report</h1>
+            <div class="subtitle">🌌 天文日报</div>
+            <div class="date">Generated (UTC): 2026-06-14 11:43:34</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value">17</div>
+                <div class="stat-label">Articles / 篇文章</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Sources / 个源</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="article">
+                <div class="article-number">1.</div>
+                <div class="article-title en"><a href="https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Feb06Aprime.html" target="_blank">Annular Solar Eclipse of February 6, 2027</a></div>
+                <div class="article-title zh">2027年2月6日日环食</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> EclipseWise | <strong>Time (UTC):</strong> 2027-01-01 00:00:00</div>
+                    <div><strong>来源:</strong> EclipseWise | <strong>时间 (UTC):</strong> 2027-01-01 00:00:00</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Upcoming eclipse event: Annular Solar Eclipse of February 6, 2027</div>
+                    <div class="summary-block zh">即将到来的日食活动： 2027年2月6日的日环食</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">2.</div>
+                <div class="article-title en"><a href="https://apod.nasa.gov/apod/" target="_blank">10 Days of Venus and Jupiter</a></div>
+                <div class="article-title zh">金星和木星的10天</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> APOD | <strong>Time (UTC):</strong> 2026-06-14 11:42:39</div>
+                    <div><strong>来源:</strong> APOD | <strong>时间 (UTC):</strong> 2026-06-14 11:42:39</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Venus and Jupiter may have caught your attention lately. The recent close conjunction of the two brightest planets in recent evening skies has been hard to miss. With Jupiter at the top, starting on May 30 and ending on June 8, their close approach was chronicled daily, left to right, in the feature</div>
+                    <div class="summary-block zh">金星和木星最近可能引起了你的注意。最近傍晚天空中最亮的两颗行星的近距离接触不容错过。木星位于顶部，从5月30日开始，到6月8日结束，他们的近距离接触每天都被记录在特写中，从左到右</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">3.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260522112622" target="_blank">National Astronomical Science Data Center Science Platform Application Subject Solicitation Results Announcement</a></div>
+                <div class="article-title zh">国家天文科学数据中心科学平台应用课题征集结果公布</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">National Astronomical Science Data Center Science Platform Application Subject Solicitation Results Announcement</div>
+                    <div class="summary-block zh">国家天文科学数据中心科学平台应用课题征集结果公布</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">4.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260511161152" target="_blank">NADC helps China's "Tianguan" become a rising international space science new highland</a></div>
+                <div class="article-title zh">NADC助力中国“天关”成为正在崛起的国际空间科学新高地</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">NADC helps China's "Tianguan" become a rising international space science new highland</div>
+                    <div class="summary-block zh">NADC助力中国“天关”成为正在崛起的国际空间科学新高地</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">5.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260430113454" target="_blank">The 2nd inaugural meeting of the National Astronomical Science Data Center Council and Expert Committee and the Strategic Development Advisory Meeting were held in Beijing.</a></div>
+                <div class="article-title zh">国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在京召开</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The 2nd inaugural meeting of the National Astronomical Science Data Center Council and Expert Committee and the Strategic Development Advisory Meeting were held in Beijing.</div>
+                    <div class="summary-block zh">国家天文科学数据中心第二届理事会及专家委员会成立大会暨战略发展咨询会在京召开</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">6.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260409163224" target="_blank">Virtual Observatory Recruitment | Multiple vacancies, inviting you to a new journey</a></div>
+                <div class="article-title zh">虚拟天文台招聘｜多个岗位虚位以待，邀你共赴新程</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Virtual Observatory Recruitment | Multiple vacancies, inviting you to a new journey</div>
+                    <div class="summary-block zh">虚拟天文台招聘｜多个岗位虚位以待，邀你共赴新程</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">7.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260326164400" target="_blank">Alert: Beijing wins right to host 2028 ADASS International Conference</a></div>
+                <div class="article-title zh">快讯：北京获得2028年ADASS国际会议举办权</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Alert: Beijing wins right to host 2028 ADASS International Conference</div>
+                    <div class="summary-block zh">快讯：北京获得2028年ADASS国际会议举办权</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">8.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260608110044" target="_blank">NADC young data scientists use LAMOST data to make new advances in the study of the physical parameters of connected binary stars</a></div>
+                <div class="article-title zh">NADC青年数据科学家利用LAMOST数据在相接双星物理参数研究方面取得新进展</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">NADC young data scientists use LAMOST data to make new advances in the study of the physical parameters of connected binary stars</div>
+                    <div class="summary-block zh">NADC青年数据科学家利用LAMOST数据在相接双星物理参数研究方面取得新进展</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">9.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260605105802" target="_blank">National Astronomical Observatory research team reveals new clues about the history of the formation of halo star clusters in the Andromeda Galaxy</a></div>
+                <div class="article-title zh">国家天文台研究团队揭示仙女座星系晕星团形成历史新线索</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">National Astronomical Observatory research team reveals new clues about the history of the formation of halo star clusters in the Andromeda Galaxy</div>
+                    <div class="summary-block zh">国家天文台研究团队揭示仙女座星系晕星团形成历史新线索</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">10.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260602093747" target="_blank">Tianguan satellite obtained the most complete X-ray image of supernova remnant W28 to date</a></div>
+                <div class="article-title zh">天关卫星获得迄今为止最完整超新星遗迹W28的X射线图像</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Tianguan satellite obtained the most complete X-ray image of supernova remnant W28 to date</div>
+                    <div class="summary-block zh">天关卫星获得迄今为止最完整超新星遗迹W28的X射线图像</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">11.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260529094856" target="_blank">The end of the 0.1 pc myth: the true width of the molecular cloud fiber is 100 times different, and the three-dimensional true body is far thinner than the projection "thin"</a></div>
+                <div class="article-title zh">0.1 pc神话落幕：分子云纤维真实宽度相差百倍，三维真身远比投影“瘦削”</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The end of the 0.1 pc myth: the true width of the molecular cloud fiber is 100 times different, and the three-dimensional true body is far thinner than the projection "thin"</div>
+                    <div class="summary-block zh">0.1 pc神话落幕：分子云纤维真实宽度相差百倍，三维真身远比投影“瘦削”</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">12.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20260527093428" target="_blank">New Progress in Sunspot Bright Bridge Jet Study at Yunnan Observatory</a></div>
+                <div class="article-title zh">云南天文台太阳黑子亮桥喷流研究中取得新进展</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">New Progress in Sunspot Bright Bridge Jet Study at Yunnan Observatory</div>
+                    <div class="summary-block zh">云南天文台太阳黑子亮桥喷流研究中取得新进展</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">13.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20211216173556" target="_blank">The National Astronomical Science Data Center gives Cold Lake location scientists peace of mind</a></div>
+                <div class="article-title zh">国家天文科学数据中心让冷湖选址科学家后顾无忧</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">The National Astronomical Science Data Center gives Cold Lake location scientists peace of mind</div>
+                    <div class="summary-block zh">国家天文科学数据中心让冷湖选址科学家后顾无忧</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">14.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20200202160224" target="_blank">Classic Service Case: Guo Shoujing Telescope Spectral Sky Survey Data Full Lifecycle Service</a></div>
+                <div class="article-title zh">经典服务案例：郭守敬望远镜光谱巡天数据全生命周期服务</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Classic Service Case: Guo Shoujing Telescope Spectral Sky Survey Data Full Lifecycle Service</div>
+                    <div class="summary-block zh">经典服务案例：郭守敬望远镜光谱巡天数据全生命周期服务</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">15.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20200202160711" target="_blank">Classic service case: 500-meter aperture spherical radio telescope technical support service</a></div>
+                <div class="article-title zh">经典服务案例：500米口径球面射电望远镜技术支持服务</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Classic service case: 500-meter aperture spherical radio telescope technical support service</div>
+                    <div class="summary-block zh">经典服务案例：500米口径球面射电望远镜技术支持服务</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">16.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20200202160804" target="_blank">Classic service case: domestic core ground-based telescope data lifecycle service</a></div>
+                <div class="article-title zh">经典服务案例：国内核心地基望远镜数据全生命周期服务</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Classic service case: domestic core ground-based telescope data lifecycle service</div>
+                    <div class="summary-block zh">经典服务案例：国内核心地基望远镜数据全生命周期服务</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">17.</div>
+                <div class="article-title en"><a href="https://nadc.china-vo.org/article/20200202160847" target="_blank">Classic service case: Astronomical film digitization project data exchange and technical services</a></div>
+                <div class="article-title zh">经典服务案例：天文底片数字化项目数据汇交与技术服务</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> NADC | <strong>Time (UTC):</strong> 2026-06-14 11:42:38</div>
+                    <div><strong>来源:</strong> NADC | <strong>时间 (UTC):</strong> 2026-06-14 11:42:38</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Classic service case: Astronomical film digitization project data exchange and technical services</div>
+                    <div class="summary-block zh">经典服务案例：天文底片数字化项目数据汇交与技术服务</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🔭 Powered by Astronomy Daily Report Generator | 由天文日报生成器提供</p>
+        </div>
+    </div>
+</body>
+</html>
