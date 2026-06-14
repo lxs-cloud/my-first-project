@@ -74,8 +74,6 @@ export async function generateMarkdown(articles: Article[]): Promise<string> {
 
 export function getOutputFilename(): string {
   const now = new Date();
-  const dateStr = now
-    .toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' })
-    .replace(/\//g, '-');
+  const dateStr = now.toISOString().split('T')[0];
   return `ai-daily-${dateStr}.md`;
 }

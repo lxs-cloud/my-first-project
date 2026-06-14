@@ -288,9 +288,7 @@ export async function saveHtmlReport(html: string): Promise<string> {
   await mkdir(outputDir, { recursive: true });
 
   const now = new Date();
-  const dateStr = now
-    .toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' })
-    .replace(/\//g, '-');
+  const dateStr = now.toISOString().split('T')[0];
 
   const filename = `ai-daily-${dateStr}.html`;
   const filepath = join(outputDir, filename);
