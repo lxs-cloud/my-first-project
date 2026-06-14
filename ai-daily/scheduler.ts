@@ -72,14 +72,14 @@ async function runDailyReport() {
 }
 
 function startScheduler() {
-  // 每天早上 8:00 运行
+  // 每天早上 8:00 (北京时间) 运行 = UTC 00:00
   // Cron 格式: 分 小时 日期 月份 星期
-  const task = cron.schedule('0 8 * * *', () => {
+  const task = cron.schedule('0 0 * * *', () => {
     runDailyReport();
   });
 
   console.log('📅 AI日报定时器已启动');
-  console.log('⏰ 计划每天早上 08:00 (UTC) 运行');
+  console.log('⏰ 计划每天早上 08:00 (北京时间) 运行');
   console.log('💾 输出目录: output/');
   console.log('🌐 请访问 output/index.html 查看汇总\n');
 
