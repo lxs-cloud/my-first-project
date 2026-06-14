@@ -175,10 +175,17 @@ export async function fetchAllSources(): Promise<{ articles: Article[]; errors: 
 
   const articles: Article[] = [];
   const errors: string[] = [];
+  const seenUrls = new Set<string>();
 
   results.forEach((result) => {
     if (result.status === 'fulfilled') {
-      articles.push(...result.value.articles);
+      // 基于URL去重
+      for (const article of result.value.articles) {
+        if (!seenUrls.has(article.link)) {
+          seenUrls.add(article.link);
+          articles.push(article);
+        }
+      }
       if (result.value.error) {
         errors.push(result.value.error);
       }
