@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Daily Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .date {
+            margin-top: 15px;
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px 40px;
+            background: #f8f9ff;
+            border-bottom: 1px solid #e0e0ff;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .article {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .article-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .article-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .article-title a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .article-title.en {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .article-title.zh {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .article-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .article-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .summary-block {
+            padding: 12px;
+            background: #f8f9ff;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+            line-height: 1.6;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .summary-block.zh {
+            border-left-color: #764ba2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 40px;
+            background: #f8f9ff;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .article-meta,
+            .article-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Daily Report</h1>
+            <div class="subtitle">AI 日报</div>
+            <div class="date">Generated (UTC): 2026-06-14 11:55:16</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Articles / 篇文章</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Sources / 个源</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="article">
+                <div class="article-number">1.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/" target="_blank">As Anthropic suspends access to new models, India debates its AI future</a></div>
+                <div class="article-title zh">随着Anthropic暂停使用新车型，印度就其人工智能的未来展开辩论</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time (UTC):</strong> 2026-06-14 03:00:00</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间 (UTC):</strong> 2026-06-14 03:00:00</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Tech leaders debate whether the Anthropic episode is a wake-up call for India’s AI ambitions.</div>
+                    <div class="summary-block zh">技术领导人争论人类事件是否是印度人工智能雄心的警钟。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">2.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand/" target="_blank">Meta reportedly moves to unwind $2B Manus deal after Beijing&#8217;s demand</a></div>
+                <div class="article-title zh">据报道，在北京方面提出要求后， Meta将解除$ 2B的Manus交易</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time (UTC):</strong> 2026-06-14 00:03:49</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间 (UTC):</strong> 2026-06-14 00:03:49</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Meta starts dismantling its $2 billion Manus acquisition after Beijing ordered the deal reversed.</div>
+                    <div class="summary-block zh">在北京方面下令撤销这笔交易后， Meta开始拆除其20 $ Manus的收购。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">3.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/" target="_blank">KPMG pulls report on AI usage due to apparent hallucinations</a></div>
+                <div class="article-title zh">毕马威（ KPMG ）因明显的幻觉而发布人工智能使用报告</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time (UTC):</strong> 2026-06-13 20:42:31</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间 (UTC):</strong> 2026-06-13 20:42:31</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Once again, AI proves to be an unreliable source of information about AI.</div>
+                    <div class="summary-block zh">再次证明，人工智能是一个不可靠的人工智能信息来源。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">4.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/" target="_blank">Amazon CEO reportedly raised Anthropic model concerns before government crackdown</a></div>
+                <div class="article-title zh">据报道，亚马逊首席执行官在政府打击之前提出了人类模型的担忧</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time (UTC):</strong> 2026-06-13 19:11:41</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间 (UTC):</strong> 2026-06-13 19:11:41</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">Amazon CEO Andy Jassy may have been the source of security concerns that led Anthropic to cut off worldwide access to two models on Friday.</div>
+                    <div class="summary-block zh">亚马逊首席执行官安迪·贾西（ Andy Jassy ）可能是安全问题的根源，导致Anthropic周五在全球范围内切断了两款车型的访问权限。</div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-number">5.</div>
+                <div class="article-title en"><a href="https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/" target="_blank">OpenAI faces investigation from state attorneys general</a></div>
+                <div class="article-title zh">OpenAI面临州检察长的调查</div>
+                <div class="article-meta">
+                    <div><strong>Source:</strong> TechCrunch | <strong>Time (UTC):</strong> 2026-06-13 16:47:18</div>
+                    <div><strong>来源:</strong> TechCrunch | <strong>时间 (UTC):</strong> 2026-06-13 16:47:18</div>
+                </div>
+                <div class="article-summary">
+                    <div class="summary-block en">It's not clear which states are involved, but they're asking about everything from OpenAI's ad policies to its handling of health data.</div>
+                    <div class="summary-block zh">目前尚不清楚涉及哪些州，但他们询问了从OpenAI的广告政策到其对健康数据的处理等方方面面。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>✨ Powered by AI Daily Report Generator | 由 AI 日报生成器提供</p>
+        </div>
+    </div>
+</body>
+</html>
