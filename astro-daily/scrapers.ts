@@ -576,10 +576,22 @@ export async function scrapeEclipsewise(): Promise<ScrapResult> {
 
       const cleanTitle = formatEclipseTitle(title.replace(/\s+/g, ' '));
 
+      // 提取真实日期 (e.g., "2027 Feb 06" -> Date)
+      const dateMatch = title.match(/(\d{4})\s+(\w{3})\s+(\d{1,2})/);
+      let pubDate = new Date();
+      if (dateMatch) {
+        const monthMap: Record<string, number> = {
+          'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+          'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11,
+        };
+        const [, year, month, day] = dateMatch;
+        pubDate = new Date(parseInt(year), monthMap[month], parseInt(day));
+      }
+
       articles.push({
         title: cleanTitle,
         link,
-        pubDate: yearMatch ? new Date(`${yearMatch[1]}-01-01`) : new Date(),
+        pubDate,
         source: 'EclipseWise',
         description: `Upcoming eclipse event: ${cleanTitle}`,
       });
