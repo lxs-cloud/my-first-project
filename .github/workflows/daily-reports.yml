@@ -1,0 +1,37 @@
+name: Generate Daily Reports
+
+on:
+  schedule:
+    # 每天 UTC 00:00 = 北京时间 08:00
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ai-daily dependencies
+        run: cd ai-daily && npm install
+
+      - name: Install astro-daily dependencies
+        run: cd astro-daily && npm install
+
+      - name: Generate AI daily report
+        run: cd ai-daily && npx tsx index.ts
+
+      - name: Generate Astronomy daily report
+        run: cd astro-daily && npx tsx index.ts
+
+      - name: Commit and push reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ai-daily/output/ astro-daily/output/
+          git diff --staged --quiet || git commit -m "Auto-generate daily reports $(date -u +%Y-%m-%d)"
+          git push

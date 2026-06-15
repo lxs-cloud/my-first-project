@@ -327,21 +327,11 @@
 
     <script>
         function navigateToAI() {
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            const dateStr = `${year}-${month}-${day}`;
-            window.location.href = `./ai-daily/output/ai-daily-${dateStr}.html`;
+            window.location.href = './ai-daily/output/index.html';
         }
 
         function navigateToAstro() {
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            const dateStr = `${year}-${month}-${day}`;
-            window.location.href = `./astro-daily/output/astro-daily-${dateStr}.html`;
+            window.location.href = './astro-daily/output/index.html';
         }
 
         document.addEventListener('DOMContentLoaded', function() {
