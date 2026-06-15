@@ -416,7 +416,7 @@ export async function generateIndexPage(): Promise<string> {
 `;
     }
 
-    html += `            <a href="../" class="back-link">← 返回首页</a>
+    html += `            <a href="../../" class="back-link">← 返回首页</a>
         </div>
     </div>
 </body>
