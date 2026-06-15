@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code</title>
+    <title>LXS Daily</title>
     <style>
         * {
             margin: 0;
@@ -16,338 +16,232 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .stars::before,
+        .stars::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 200px 200px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 300px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1.5px 1.5px at 400px 150px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 500px 250px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 600px 50px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1.5px 1.5px at 700px 300px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 100px 300px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 250px 350px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 350px 400px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 450px 350px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 550px 400px, rgba(255,255,255,0.7), transparent);
+            background-size: 700px 450px;
+            animation: twinkleStars 4s ease-in-out infinite alternate;
+        }
+
+        .stars::after {
+            background-size: 500px 350px;
+            animation-delay: 2s;
+            opacity: 0.6;
+        }
+
+        @keyframes twinkleStars {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         .container {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            animation: slideIn 0.8s ease-out;
+            padding: 3rem 2.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .galaxy-icon {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            width: 140px;
+            height: 140px;
+        }
+
+        .galaxy-icon svg {
+            filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
         }
 
         h1 {
-            font-size: 3rem;
-            color: #333;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2.8rem;
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
             font-weight: 700;
             letter-spacing: -1px;
         }
 
         .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 1.5rem;
-            opacity: 0.8;
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
         }
 
-        .container {
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-        }
-
-        .tip {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #999;
-            opacity: 0;
-            animation: fadeInUp 1.5s ease-out 1s forwards;
-        }
-
-        .buttons-group {
+        .cards {
             display: flex;
-            gap: 15px;
-            margin-top: 2rem;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1.5s ease-out 1s forwards;
         }
 
-        .report-btn {
-            padding: 12px 24px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 8px;
+        .card {
+            padding: 2rem 2.5rem;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
             cursor: pointer;
-            font-weight: 600;
             transition: all 0.3s ease;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            min-width: 200px;
         }
 
-        .ai-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15), inset 0 0 0 1px rgba(139, 92, 246, 0.1);
         }
 
-        .ai-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        .card.astro:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 8px 32px rgba(56, 189, 248, 0.15), inset 0 0 0 1px rgba(56, 189, 248, 0.1);
         }
 
-        .astro-btn {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        }
-
-        .astro-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 60, 114, 0.4);
-        }
-
-        .report-btn:active {
-            transform: translateY(0);
-        }
-
-        .emoji {
-            display: inline-block;
+        .card-icon {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            width: 120px;
-            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        svg {
-            filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
+        .card-icon svg {
+            filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .card.astro .card-icon svg {
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
         }
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .container {
-                margin: 1rem;
-            }
-
-            .emoji {
-                font-size: 3rem;
-            }
+            h1 { font-size: 2rem; }
+            .cards { flex-direction: column; align-items: center; }
+            .card { width: 100%; max-width: 280px; }
+            .container { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
     <div class="container">
-        <div class="emoji">
+        <div class="galaxy-icon">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <style>
-                        @keyframes rotate {
-                            from { transform: rotate(0deg); }
-                            to { transform: rotate(360deg); }
-                        }
-                        @keyframes twinkle {
-                            0%, 100% { opacity: 0.3; }
-                            50% { opacity: 1; }
-                        }
-                        .galaxy {
-                            animation: rotate 15s linear infinite;
-                            transform-origin: center;
-                        }
-                        .star {
-                            animation: twinkle 3s ease-in-out infinite;
-                        }
-                        .star1 { animation-delay: 0s; }
-                        .star2 { animation-delay: 0.5s; }
-                        .star3 { animation-delay: 1s; }
-                        .star4 { animation-delay: 1.5s; }
-                        .star5 { animation-delay: 2s; }
-                        .star6 { animation-delay: 2.5s; }
+                        @keyframes galaxySpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+                        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+                        .galaxy-body { animation: galaxySpin 30s linear infinite; transform-origin: 100px 100px; }
+                        .pulse-star { animation: pulse 2.5s ease-in-out infinite; }
                     </style>
-                    <!-- 星云渐变：淡紫色到米白 -->
-                    <linearGradient id="nebula1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#e6d5e6;stop-opacity:0.9"/>
-                        <stop offset="50%" style="stop-color:#dcc0dc;stop-opacity:0.7"/>
-                        <stop offset="100%" style="stop-color:#fffaf0;stop-opacity:0.5"/>
-                    </linearGradient>
-                    <!-- 深紫渐变 -->
-                    <linearGradient id="nebula2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#d8bfd8;stop-opacity:0.8"/>
-                        <stop offset="100%" style="stop-color:#faf0e6;stop-opacity:0.4"/>
-                    </linearGradient>
-                    <!-- 银核径向渐变 -->
-                    <radialGradient id="coreGlow">
-                        <stop offset="0%" style="stop-color:#fff;stop-opacity:1"/>
-                        <stop offset="30%" style="stop-color:#fffaf0;stop-opacity:0.9"/>
-                        <stop offset="60%" style="stop-color:#e6d5e6;stop-opacity:0.6"/>
-                        <stop offset="100%" style="stop-color:#d8bfd8;stop-opacity:0"/>
+                    <radialGradient id="core">
+                        <stop offset="0%" stop-color="#fffde0" stop-opacity="1"/>
+                        <stop offset="20%" stop-color="#fef3c7" stop-opacity="0.9"/>
+                        <stop offset="50%" stop-color="#c4b5fd" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
                     </radialGradient>
-                    <!-- 模糊滤镜 -->
-                    <filter id="blur">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
-                    </filter>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
+                    <radialGradient id="diskGlow">
+                        <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.4"/>
+                        <stop offset="60%" stop-color="#6366f1" stop-opacity="0.15"/>
+                        <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+                    </radialGradient>
+                    <filter id="softBlur"><feGaussianBlur stdDeviation="2.5"/></filter>
+                    <filter id="armBlur"><feGaussianBlur stdDeviation="1.8"/></filter>
+                    <filter id="coreBloom"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                 </defs>
-
-                <g class="galaxy">
-                    <!-- 背景层星星（大） -->
-                    <circle cx="30" cy="40" r="2" fill="#fff" opacity="0.6" class="star star1"/>
-                    <circle cx="170" cy="35" r="2.5" fill="#fff" opacity="0.7" class="star star2"/>
-                    <circle cx="25" cy="155" r="1.8" fill="#fffaf0" opacity="0.5" class="star star3"/>
-                    <circle cx="175" cy="165" r="2.2" fill="#fff" opacity="0.65" class="star star4"/>
-                    <circle cx="45" cy="20" r="1.5" fill="#fffaf0" opacity="0.6" class="star star5"/>
-                    <circle cx="160" cy="185" r="1.6" fill="#fff" opacity="0.55" class="star star6"/>
-
-                    <!-- 外层星云背景 -->
-                    <ellipse cx="100" cy="100" rx="75" ry="60" fill="url(#coreGlow)" opacity="0.2"/>
-
-                    <!-- 第一条旋臂（上右方向，错落） -->
-                    <path d="M 100 100 Q 125 70 150 45 Q 165 30 175 20"
-                          stroke="url(#nebula1)" stroke-width="14" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.75"/>
-                    <path d="M 102 98 Q 128 65 155 38 Q 168 25 180 15"
-                          stroke="url(#nebula2)" stroke-width="9" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.6"/>
-
-                    <!-- 第二条旋臂（下左方向，错落） -->
-                    <path d="M 100 100 Q 75 135 50 160 Q 35 175 25 185"
-                          stroke="url(#nebula1)" stroke-width="14" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.75"/>
-                    <path d="M 98 102 Q 70 140 45 168 Q 32 183 22 193"
-                          stroke="url(#nebula2)" stroke-width="9" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.6"/>
-
-                    <!-- 第三条旋臂（左上方向，错落） -->
-                    <path d="M 100 100 Q 60 80 35 55 Q 20 40 10 30"
-                          stroke="url(#nebula1)" stroke-width="12" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.65"/>
-                    <path d="M 102 97 Q 65 75 40 48 Q 25 35 15 25"
-                          stroke="url(#nebula2)" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.5"/>
-
-                    <!-- 第四条旋臂（右下方向，错落） -->
-                    <path d="M 100 100 Q 140 125 165 155 Q 180 170 190 185"
-                          stroke="url(#nebula1)" stroke-width="12" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.65"/>
-                    <path d="M 98 103 Q 135 130 160 162 Q 175 177 185 192"
-                          stroke="url(#nebula2)" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.5"/>
-
-                    <!-- 第五条旋臂（细弱，增加复杂感） -->
-                    <path d="M 100 100 Q 115 55 130 30 Q 140 15 148 8"
-                          stroke="url(#nebula2)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#blur)" opacity="0.4"/>
-
-                    <!-- 星云云团效果 -->
-                    <circle cx="140" cy="70" r="8" fill="url(#nebula1)" opacity="0.3" filter="url(#blur)"/>
-                    <circle cx="65" cy="145" r="7" fill="url(#nebula1)" opacity="0.3" filter="url(#blur)"/>
-                    <circle cx="40" cy="75" r="6" fill="url(#nebula2)" opacity="0.25" filter="url(#blur)"/>
-                    <circle cx="160" cy="135" r="6" fill="url(#nebula2)" opacity="0.25" filter="url(#blur)"/>
-
-                    <!-- 银核中心（加强亮度） -->
-                    <circle cx="100" cy="100" r="18" fill="url(#coreGlow)" filter="url(#glow)"/>
-                    <circle cx="100" cy="100" r="12" fill="#fffaf0" opacity="0.9" filter="url(#glow)"/>
-                    <circle cx="100" cy="100" r="7" fill="#fff" opacity="1"/>
-                    <circle cx="100" cy="100" r="3" fill="#fff" opacity="0.6"/>
-
-                    <!-- 银核周围光晕 -->
-                    <circle cx="100" cy="100" r="20" fill="none" stroke="#fffaf0" stroke-width="2" opacity="0.4" filter="url(#blur)"/>
-
-                    <!-- 中层星星（围绕银核） -->
-                    <circle cx="85" cy="75" r="1.3" fill="#fff" opacity="0.8" class="star star1"/>
-                    <circle cx="115" cy="80" r="1.4" fill="#fff" opacity="0.75" class="star star2"/>
-                    <circle cx="120" cy="110" r="1.2" fill="#fffaf0" opacity="0.7" class="star star3"/>
-                    <circle cx="90" cy="125" r="1.5" fill="#fff" opacity="0.8" class="star star4"/>
-                    <circle cx="110" cy="130" r="1.1" fill="#fff" opacity="0.65" class="star star5"/>
-                    <circle cx="80" cy="95" r="1.3" fill="#fffaf0" opacity="0.7" class="star star6"/>
-
-                    <!-- 旋臂上的星星（增加闪钻感） -->
-                    <circle cx="135" cy="60" r="1.6" fill="#fff" opacity="0.85" class="star star1"/>
-                    <circle cx="155" cy="42" r="1.2" fill="#fff" opacity="0.7" class="star star2"/>
-                    <circle cx="170" cy="28" r="1.4" fill="#fffaf0" opacity="0.75" class="star star3"/>
-                    <circle cx="72" cy="148" r="1.5" fill="#fff" opacity="0.8" class="star star4"/>
-                    <circle cx="55" cy="165" r="1.3" fill="#fff" opacity="0.75" class="star star5"/>
-                    <circle cx="38" cy="178" r="1.2" fill="#fffaf0" opacity="0.68" class="star star6"/>
-                    <circle cx="48" cy="88" r="1.4" fill="#fff" opacity="0.78" class="star star1"/>
-                    <circle cx="32" cy="68" r="1.3" fill="#fff" opacity="0.72" class="star star2"/>
-                    <circle cx="18" cy="48" r="1.2" fill="#fffaf0" opacity="0.65" class="star star3"/>
-                    <circle cx="152" cy="142" r="1.5" fill="#fff" opacity="0.8" class="star star4"/>
-                    <circle cx="168" cy="158" r="1.2" fill="#fff" opacity="0.7" class="star star5"/>
-                    <circle cx="182" cy="175" r="1.4" fill="#fffaf0" opacity="0.75" class="star star6"/>
-
-                    <!-- 前景层小星星（增加细节感） -->
-                    <circle cx="95" cy="50" r="0.8" fill="#fff" opacity="0.9" class="star star1"/>
-                    <circle cx="125" cy="55" r="0.7" fill="#fff" opacity="0.85" class="star star2"/>
-                    <circle cx="140" cy="75" r="0.9" fill="#fff" opacity="0.8" class="star star3"/>
-                    <circle cx="75" cy="115" r="0.8" fill="#fff" opacity="0.85" class="star star4"/>
-                    <circle cx="105" cy="145" r="0.7" fill="#fffaf0" opacity="0.8" class="star star5"/>
-                    <circle cx="60" cy="135" r="0.9" fill="#fff" opacity="0.82" class="star star6"/>
-                    <circle cx="50" cy="65" r="0.8" fill="#fff" opacity="0.8" class="star star1"/>
-                    <circle cx="35" cy="85" r="0.7" fill="#fffaf0" opacity="0.75" class="star star2"/>
-                    <circle cx="160" cy="95" r="0.9" fill="#fff" opacity="0.85" class="star star3"/>
-                    <circle cx="175" cy="120" r="0.8" fill="#fff" opacity="0.78" class="star star4"/>
-                    <circle cx="145" cy="155" r="0.7" fill="#fff" opacity="0.8" class="star star5"/>
-                    <circle cx="120" cy="170" r="0.85" fill="#fffaf0" opacity="0.75" class="star star6"/>
-
-                    <!-- 点缀星点（沿旋臂） -->
-                    <circle cx="145" cy="55" r="1.2" fill="#fff" opacity="0.9"/>
-                    <circle cx="160" cy="35" r="0.8" fill="#fffaf0" opacity="0.7"/>
-                    <circle cx="65" cy="155" r="1.2" fill="#fff" opacity="0.9"/>
-                    <circle cx="48" cy="172" r="0.8" fill="#fffaf0" opacity="0.7"/>
-                    <circle cx="32" cy="65" r="1" fill="#fff" opacity="0.8"/>
-                    <circle cx="155" cy="150" r="1" fill="#fff" opacity="0.8"/>
-                    <circle cx="115" cy="48" r="0.7" fill="#fffaf0" opacity="0.6"/>
+                <g class="galaxy-body">
+                    <ellipse cx="100" cy="100" rx="80" ry="45" fill="url(#diskGlow)" filter="url(#softBlur)"/>
+                    <path d="M 100 100 C 120 80, 155 75, 165 55 C 172 40, 160 30, 140 35" stroke="#7c3aed" stroke-width="8" fill="none" stroke-linecap="round" filter="url(#armBlur)" opacity="0.6"/>
+                    <path d="M 100 100 C 115 85, 145 88, 158 70 C 168 55, 175 45, 170 38" stroke="#38bdf8" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#armBlur)" opacity="0.45"/>
+                    <path d="M 100 100 C 80 120, 45 125, 35 145 C 28 160, 40 170, 60 165" stroke="#7c3aed" stroke-width="8" fill="none" stroke-linecap="round" filter="url(#armBlur)" opacity="0.6"/>
+                    <path d="M 100 100 C 85 115, 55 112, 42 130 C 32 145, 25 155, 30 162" stroke="#38bdf8" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#armBlur)" opacity="0.45"/>
+                    <path d="M 100 100 C 90 75, 60 60, 45 55 C 35 52, 28 58, 32 68" stroke="#a78bfa" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#armBlur)" opacity="0.4"/>
+                    <path d="M 100 100 C 110 125, 140 140, 155 145 C 165 148, 172 142, 168 132" stroke="#a78bfa" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#armBlur)" opacity="0.4"/>
+                    <ellipse cx="100" cy="100" rx="22" ry="12" fill="url(#core)" filter="url(#coreBloom)"/>
+                    <ellipse cx="100" cy="100" rx="10" ry="6" fill="#fffde0" opacity="0.95"/>
+                    <ellipse cx="100" cy="100" rx="4" ry="2.5" fill="#fff" opacity="1"/>
+                    <circle cx="150" cy="62" r="1.2" fill="#e0e7ff" opacity="0.9" class="pulse-star"/>
+                    <circle cx="160" cy="50" r="0.8" fill="#fff" opacity="0.7" class="pulse-star" style="animation-delay:0.5s"/>
+                    <circle cx="55" cy="148" r="1.2" fill="#e0e7ff" opacity="0.9" class="pulse-star" style="animation-delay:1s"/>
+                    <circle cx="42" cy="158" r="0.9" fill="#fff" opacity="0.75" class="pulse-star" style="animation-delay:1.5s"/>
+                    <circle cx="50" cy="60" r="1" fill="#fff" opacity="0.8" class="pulse-star" style="animation-delay:0.3s"/>
+                    <circle cx="155" cy="140" r="1" fill="#fff" opacity="0.8" class="pulse-star" style="animation-delay:1.8s"/>
+                    <circle cx="130" cy="75" r="0.7" fill="#c4b5fd" opacity="0.7" class="pulse-star" style="animation-delay:2.2s"/>
+                    <circle cx="70" cy="130" r="0.7" fill="#c4b5fd" opacity="0.7" class="pulse-star" style="animation-delay:0.8s"/>
                 </g>
+                <circle cx="20" cy="25" r="1" fill="#fff" opacity="0.5" class="pulse-star" style="animation-delay:0.2s"/>
+                <circle cx="180" cy="30" r="1.2" fill="#fff" opacity="0.6" class="pulse-star" style="animation-delay:1.2s"/>
+                <circle cx="15" cy="175" r="0.9" fill="#fff" opacity="0.5" class="pulse-star" style="animation-delay:2s"/>
+                <circle cx="185" cy="170" r="1.1" fill="#fff" opacity="0.55" class="pulse-star" style="animation-delay:0.7s"/>
+                <circle cx="30" cy="100" r="0.8" fill="#e0e7ff" opacity="0.4"/>
+                <circle cx="175" cy="95" r="0.8" fill="#e0e7ff" opacity="0.4"/>
             </svg>
         </div>
-        <h1>Hello, L X S !</h1>
-        <p class="subtitle">欢迎使用 L X S</p>
-        <div class="buttons-group">
-            <button class="report-btn ai-btn" onclick="navigateToAI()">✨ 查看 AI 日报</button>
-            <button class="report-btn astro-btn" onclick="navigateToAstro()">🔭 查看 天文日报</button>
+        <h1>LXS Daily</h1>
+        <p class="subtitle">AI & Astronomy News, Every Day</p>
+        <div class="cards">
+            <div class="card" onclick="window.location.href='./ai-daily/output/index.html'">
+                <div class="card-icon">✨</div>
+                <div class="card-title">AI 日报</div>
+                <div class="card-desc">AI & Tech News</div>
+            </div>
+            <div class="card astro" onclick="window.location.href='./astro-daily/output/index.html'">
+                <div class="card-icon">🔭</div>
+                <div class="card-title">天文日报</div>
+                <div class="card-desc">Astronomy & Space</div>
+            </div>
         </div>
     </div>
-
-    <script>
-        function navigateToAI() {
-            window.location.href = './ai-daily/output/index.html';
-        }
-
-        function navigateToAstro() {
-            window.location.href = './astro-daily/output/index.html';
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.querySelector('.container');
-
-            // 点击容器其他区域也能导航
-            container.addEventListener('click', function(e) {
-                if (e.target.tagName !== 'BUTTON') {
-                    navigateToAI(); // 默认进入AI日报
-                }
-            });
-
-            // 键盘快捷键
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') navigateToAI();
-                if (e.key === ' ') navigateToAstro();
-            });
-        });
-    </script>
+</body>
+</html>

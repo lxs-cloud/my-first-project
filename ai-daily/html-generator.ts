@@ -28,194 +28,214 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily Report</title>
+    <title>AI Daily Report - ${dateStr.split(' ')[0]}</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0a0e1a;
             min-height: 100vh;
             padding: 40px 20px;
+            color: #e2e8f0;
         }
+
+        .stars {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+        }
+        .stars::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image:
+                radial-gradient(1px 1px at 50px 80px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 150px 200px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 300px 100px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 450px 300px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 600px 150px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 750px 250px, rgba(255,255,255,0.7), transparent);
+            background-size: 800px 400px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+        }
+        @keyframes twinkle { 0% { opacity: 0.4; } 100% { opacity: 1; } }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
             text-align: center;
+            padding: 40px 20px 30px;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.2em;
+            color: #e2e8f0;
+            margin-bottom: 8px;
         }
 
         .header .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
+            font-size: 1.1em;
+            color: #94a3b8;
         }
 
         .header .date {
-            margin-top: 15px;
-            font-size: 0.95em;
-            opacity: 0.8;
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #64748b;
         }
 
         .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 30px 40px;
-            background: #f8f9ff;
-            border-bottom: 1px solid #e0e0ff;
+            gap: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
         }
 
         .stat-item {
             text-align: center;
+            padding: 16px;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
         }
 
         .stat-value {
             font-size: 2em;
             font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #a78bfa;
         }
 
         .stat-label {
-            color: #666;
-            margin-top: 8px;
-            font-size: 0.95em;
+            color: #94a3b8;
+            margin-top: 4px;
+            font-size: 0.85em;
         }
 
         .content {
-            padding: 40px;
+            padding: 0 20px;
         }
 
         .article {
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            padding: 24px;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: border-color 0.3s;
         }
 
-        .article:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .article:hover {
+            border-color: rgba(139, 92, 246, 0.3);
         }
 
         .article-number {
             font-weight: bold;
-            color: #667eea;
-            font-size: 0.95em;
+            color: #8b5cf6;
+            font-size: 0.85em;
             margin-bottom: 8px;
         }
 
         .article-title {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             line-height: 1.4;
         }
 
         .article-title a {
-            color: #667eea;
+            color: #c4b5fd;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .article-title a:hover {
-            color: #764ba2;
-            text-decoration: underline;
+            color: #e9d5ff;
         }
 
         .article-title.en {
-            font-size: 1.2em;
-            color: #333;
+            font-size: 1.15em;
+            color: #e2e8f0;
         }
 
         .article-title.zh {
-            font-size: 1.1em;
-            color: #666;
+            font-size: 1em;
+            color: #94a3b8;
             font-weight: normal;
             margin-bottom: 12px;
         }
 
         .article-meta {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #666;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .meta-pill {
+            font-size: 0.8em;
+            padding: 4px 10px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            color: #a78bfa;
         }
 
         .article-summary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 15px;
+            margin-top: 14px;
         }
 
         .summary-block {
-            padding: 12px;
-            background: #f8f9ff;
-            border-left: 3px solid #667eea;
-            border-radius: 4px;
-            line-height: 1.6;
-            font-size: 0.95em;
-            color: #333;
+            padding: 14px;
+            background: rgba(139, 92, 246, 0.06);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 6px;
+            line-height: 1.7;
+            font-size: 0.92em;
+            color: #cbd5e1;
+            margin-bottom: 10px;
         }
 
         .summary-block.zh {
-            border-left-color: #764ba2;
+            border-left-color: #a78bfa;
+            color: #94a3b8;
         }
 
         .footer {
             text-align: center;
-            padding: 20px 40px;
-            background: #f8f9ff;
-            color: #666;
-            font-size: 0.9em;
+            padding: 30px 20px;
+            color: #64748b;
+            font-size: 0.85em;
         }
 
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #8b5cf6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: #a78bfa; }
+
         @media (max-width: 768px) {
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .article-meta,
-            .article-summary {
-                grid-template-columns: 1fr;
-            }
-
-            .header h1 {
-                font-size: 1.8em;
-            }
+            .stats { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.6em; }
+            body { padding: 20px 10px; }
         }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
     <div class="container">
         <div class="header">
             <h1>AI Daily Report</h1>
             <div class="subtitle">AI 日报</div>
-            <div class="date">Generated (UTC): ${dateStr}</div>
+            <div class="date">${dateStr}</div>
         </div>
 
         <div class="stats">
@@ -239,12 +259,12 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
     const { en: summaryEn, zh: summaryZh } = translatedDescriptions[index];
 
     html += `            <div class="article">
-                <div class="article-number">${index + 1}.</div>
+                <div class="article-number">#${index + 1}</div>
                 <div class="article-title en"><a href="${article.link}" target="_blank">${titleEn}</a></div>
                 <div class="article-title zh">${titleZh}</div>
                 <div class="article-meta">
-                    <div><strong>Source:</strong> ${article.source} | <strong>Time (UTC):</strong> ${timeUTC}</div>
-                    <div><strong>来源:</strong> ${article.source} | <strong>时间 (UTC):</strong> ${timeUTC}</div>
+                    <span class="meta-pill">${article.source}</span>
+                    <span class="meta-pill">${timeUTC}</span>
                 </div>
                 <div class="article-summary">
                     <div class="summary-block en">${summaryEn}</div>
@@ -257,7 +277,8 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
   html += `        </div>
 
         <div class="footer">
-            <p>✨ Powered by AI Daily Report Generator | 由 AI 日报生成器提供</p>
+            <p>Powered by AI Daily Report Generator</p>
+            <a href="./index.html" class="back-link">← 返回日报列表</a>
         </div>
     </div>
 </body>

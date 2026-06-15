@@ -25,89 +25,112 @@ export async function generateHtmlReport(articles: Article[]): Promise<string> {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astronomy Daily Report</title>
+    <title>Astronomy Daily Report - ${dateStr.split(' ')[0]}</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: #0a0e1a;
             min-height: 100vh;
             padding: 40px 20px;
+            color: #e2e8f0;
         }
+
+        .stars {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+        }
+        .stars::before, .stars::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image:
+                radial-gradient(1px 1px at 50px 80px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 150px 40px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 250px 200px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 350px 120px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 450px 300px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 550px 60px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 650px 250px, rgba(255,255,255,0.6), transparent);
+            background-size: 700px 400px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+        }
+        .stars::after { background-size: 500px 300px; animation-delay: 2s; opacity: 0.5; }
+        @keyframes twinkle { 0% { opacity: 0.4; } 100% { opacity: 1; } }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
 
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 40px;
             text-align: center;
+            padding: 40px 20px 30px;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.2em;
+            color: #e2e8f0;
+            margin-bottom: 8px;
         }
 
         .header .subtitle {
-            font-size: 1.2em;
+            font-size: 1.1em;
+            color: #7dd3fc;
             opacity: 0.9;
         }
 
         .header .date {
-            margin-top: 15px;
-            font-size: 0.95em;
-            opacity: 0.8;
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #64748b;
         }
 
         .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 30px 40px;
-            background: #f0f4ff;
-            border-bottom: 1px solid #d0d8ff;
+            gap: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
         }
 
         .stat-item {
             text-align: center;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 20px;
         }
 
         .stat-value {
             font-size: 2em;
             font-weight: bold;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #38bdf8;
         }
 
         .stat-label {
-            color: #666;
-            margin-top: 8px;
-            font-size: 0.95em;
+            color: #94a3b8;
+            margin-top: 6px;
+            font-size: 0.85em;
         }
 
         .content {
-            padding: 40px;
+            padding: 0 20px;
         }
 
         .article {
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            padding: 24px;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            transition: border-color 0.3s;
+        }
+
+        .article:hover {
+            border-color: rgba(56, 189, 248, 0.3);
         }
 
         .article:last-child {
@@ -290,114 +313,73 @@ export async function generateIndexPage(): Promise<string> {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomy Daily Reports</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: #0a0e1a;
             min-height: 100vh;
             padding: 40px 20px;
         }
-
+        .stars {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 50px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 150px 200px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 300px 100px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 400px 300px, rgba(255,255,255,0.4), transparent),
+                radial-gradient(1px 1px at 500px 150px, rgba(255,255,255,0.6), transparent);
+            background-size: 600px 400px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+        }
+        @keyframes twinkle { 0% { opacity: 0.5; } 100% { opacity: 1; } }
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            max-width: 650px; margin: 0 auto; position: relative; z-index: 1;
         }
-
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
+            text-align: center; padding: 40px 20px 30px; border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        .report-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
+        .header h1 { font-size: 2rem; color: #e2e8f0; margin-bottom: 8px; }
+        .header p { color: #38bdf8; font-size: 0.95rem; }
+        .content { padding: 30px 0; }
+        .report-list { display: flex; flex-direction: column; gap: 12px; }
         .report-item {
-            padding: 15px 20px;
-            background: #f0f4ff;
-            border-left: 4px solid #1e3c72;
-            border-radius: 6px;
-            transition: all 0.3s;
+            padding: 16px 20px;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
             text-decoration: none;
             color: inherit;
+            transition: all 0.3s ease;
         }
-
         .report-item:hover {
-            background: #e0e8ff;
-            border-left-color: #2a5298;
-            transform: translateX(5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.1);
+            transform: translateX(4px);
         }
-
-        .report-item .date {
-            font-weight: bold;
-            color: #1e3c72;
-            margin-bottom: 5px;
-        }
-
-        .report-item .status {
-            font-size: 0.9em;
-            color: #999;
-        }
-
-        .empty {
-            text-align: center;
-            color: #999;
-            padding: 40px 20px;
-        }
-
+        .report-item .date { font-weight: 600; color: #38bdf8; margin-bottom: 4px; }
+        .report-item .status { font-size: 0.85rem; color: #64748b; }
+        .empty { text-align: center; color: #64748b; padding: 40px 20px; }
         .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #1e3c72;
-            text-decoration: none;
-            transition: color 0.3s;
+            display: inline-block; margin-top: 24px; color: #38bdf8;
+            text-decoration: none; font-size: 0.9rem; transition: color 0.3s;
         }
-
-        .back-link:hover {
-            color: #2a5298;
-        }
+        .back-link:hover { color: #7dd3fc; }
+        .footer { text-align: center; padding: 20px; color: #475569; font-size: 0.8rem; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
     <div class="container">
         <div class="header">
-            <h1>📰 Astronomy Daily Reports</h1>
-            <p>🔭 天文日报列表</p>
+            <h1>Astronomy Daily Reports</h1>
+            <p>天文日报列表</p>
         </div>
-
         <div class="content">
 `;
 
     if (reportFiles.length === 0) {
-      html += `            <div class="empty">
-                <p>暂无日报，请先运行生成器。</p>
-            </div>
+      html += `            <div class="empty"><p>暂无日报，请先运行生成器。</p></div>
 `;
     } else {
       html += `            <div class="report-list">
@@ -407,7 +389,7 @@ export async function generateIndexPage(): Promise<string> {
         const date = match ? match[1] : file;
 
         html += `                <a href="./${file}" class="report-item">
-                    <div class="date">📅 ${date}</div>
+                    <div class="date">${date}</div>
                     <div class="status">点击查看完整日报 →</div>
                 </a>
 `;
@@ -418,6 +400,7 @@ export async function generateIndexPage(): Promise<string> {
 
     html += `            <a href="../../" class="back-link">← 返回首页</a>
         </div>
+        <div class="footer">Powered by Astronomy Daily Report Generator</div>
     </div>
 </body>
 </html>`;
